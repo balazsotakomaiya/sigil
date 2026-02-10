@@ -26,6 +26,22 @@
         "vite": "^6.3.5",
       },
     },
+    "examples/landing": {
+      "name": "@sigil/landing",
+      "dependencies": {
+        "@sigil/core": "workspace:*",
+        "@sigil/react": "workspace:*",
+        "@sigil/svg": "workspace:*",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+      },
+      "devDependencies": {
+        "@types/react": "^19.0.0",
+        "@types/react-dom": "^19.0.0",
+        "@vitejs/plugin-react": "^4.3.4",
+        "vite": "^6.3.5",
+      },
+    },
     "packages/core": {
       "name": "@sigil/core",
       "version": "0.1.0",
@@ -233,6 +249,8 @@
     "@sigil/core": ["@sigil/core@workspace:packages/core"],
 
     "@sigil/gallery": ["@sigil/gallery@workspace:examples/gallery"],
+
+    "@sigil/landing": ["@sigil/landing@workspace:examples/landing"],
 
     "@sigil/react": ["@sigil/react@workspace:packages/react"],
 
