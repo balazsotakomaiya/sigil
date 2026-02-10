@@ -1,7 +1,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-	font-family: 'Syne', sans-serif;
+	font-family: 'Inter', sans-serif;
 	background: #111110;
 	color: #d4d4c8;
 	min-height: 100vh;
@@ -9,9 +9,9 @@ body {
 }
 
 .page-title {
-	font-family: 'Playfair Display', serif;
-	font-size: 40px;
-	font-weight: 900;
+	font-family: 'Syne', serif;
+	font-size: 64px;
+	font-weight: 400;
 	color: #f5f5ec;
 	letter-spacing: -1px;
 	margin-bottom: 6px;

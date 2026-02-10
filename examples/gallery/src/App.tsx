@@ -83,7 +83,7 @@ export function App() {
 
 	return (
 		<>
-			<h1 className="page-title">Sigil — Style Gallery</h1>
+			<h1 className="page-title">Sigil</h1>
 			<p className="page-sub">
 				Five avatar styles generated deterministically from any name. Type a name below to
 				see your avatar in every style.
