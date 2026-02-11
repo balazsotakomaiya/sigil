@@ -21,3 +21,4 @@ export {
 	renderPixel,
 	renderBrutalist,
 } from './renderers/index';
+export type { StyleId } from 'sigil-core';
