@@ -1,4 +1,4 @@
-import { avatar } from 'sigil-js';
+import { avatar } from 'sigil-gen';
 import type { StyleId } from 'sigil-core';
 
 const STYLES: Array<{ id: StyleId; name: string; desc: string }> = [

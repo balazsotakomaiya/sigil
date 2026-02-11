@@ -38,10 +38,10 @@ const BRUTALIST_NAMES = ['Zara Quinn', 'Lex M', 'Ingrid Haupt', 'Otis Vane', 'Wu
 type PkgManager = 'bun' | 'npm' | 'pnpm' | 'yarn';
 
 const INSTALL_CMDS: Record<PkgManager, string> = {
-	bun: 'bun add sigil-js',
-	npm: 'npm install sigil-js',
-	pnpm: 'pnpm add sigil-js',
-	yarn: 'yarn add sigil-js',
+	bun: 'bun add sigil-gen',
+	npm: 'npm install sigil-gen',
+	pnpm: 'pnpm add sigil-gen',
+	yarn: 'yarn add sigil-gen',
 };
 
 const REACT_INSTALL_CMDS: Record<PkgManager, string> = {
@@ -51,7 +51,7 @@ const REACT_INSTALL_CMDS: Record<PkgManager, string> = {
 	yarn: 'yarn add sigil-react',
 };
 
-const SVG_EXAMPLE = `import { avatar } from 'sigil-js';
+const SVG_EXAMPLE = `import { avatar } from 'sigil-gen';
 
 const svg = avatar('Alice Chen', {
   style: 'grain',
@@ -305,7 +305,7 @@ export function App() {
 					</a>
 					<span className="footer-sep">·</span>
 					<a
-						href="https://www.npmjs.com/package/sigil-js"
+						href="https://www.npmjs.com/package/sigil-gen"
 						target="_blank"
 						rel="noopener noreferrer"
 					>

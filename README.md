@@ -5,7 +5,7 @@
 Deterministic, beautiful avatar generation from any name. Five distinct visual styles — all derived purely from a hash of the input string. No random state, no external services, no images to host.
 
 ```
-npm: sigil-core · sigil · sigil-react
+npm: sigil-core · sigil-gen · sigil-react
 ```
 
 ## Styles
@@ -23,11 +23,11 @@ npm: sigil-core · sigil · sigil-react
 ### SVG string (universal JS)
 
 ```bash
-bun add sigil
+bun add sigil-gen
 ```
 
 ```typescript
-import { avatar } from 'sigil';
+import { avatar } from 'sigil-gen';
 
 const svg = avatar('Balazs Otakomaiya', { style: 'grain', size: 80 });
 // → SVG string ready to inject into DOM or save to file
@@ -67,7 +67,7 @@ const spec2 = grainStyle('Alice Chen');
 
 ### `avatar(name, options?)`
 
-Main entry point from `sigil`.
+Main entry point from `sigil-gen`.
 
 | Param           | Type      | Default   | Description                                                |
 | --------------- | --------- | --------- | ---------------------------------------------------------- |
@@ -101,6 +101,23 @@ cd examples/gallery && bun run dev
 # Lint
 bun run lint
 ```
+
+### Versioning & releasing
+
+```bash
+# Bump all packages (patch / minor / major / explicit)
+bun run version patch     # 0.2.0 → 0.2.1
+bun run version minor     # 0.2.0 → 0.3.0
+bun run version 1.0.0     # explicit version
+```
+
+This bumps all three package.json files, commits as `v{version}`, and creates a git tag. Then:
+
+```bash
+git push && git push --tags
+```
+
+Create a GitHub Release from the tag to trigger the npm publish workflow.
 
 ### Monorepo structure
 
