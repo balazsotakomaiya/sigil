@@ -23,7 +23,7 @@
     "test": "bun test"
   },
   "dependencies": {
-    "sigil": "workspace:*"
+    "sigil-js": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=18"

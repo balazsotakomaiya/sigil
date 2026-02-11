@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "sigil-core": "workspace:*",
-    "sigil": "workspace:*",
+    "sigil-js": "workspace:*",
     "sigil-react": "workspace:*",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

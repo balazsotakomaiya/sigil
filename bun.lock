@@ -15,8 +15,8 @@
       "dependencies": {
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
-        "sigil": "workspace:*",
         "sigil-core": "workspace:*",
+        "sigil-js": "workspace:*",
         "sigil-react": "workspace:*",
       },
       "devDependencies": {
@@ -37,7 +37,7 @@
       "name": "sigil-react",
       "version": "0.1.0",
       "dependencies": {
-        "sigil": "workspace:*",
+        "sigil-js": "workspace:*",
       },
       "devDependencies": {
         "@types/react": "^19.0.0",
@@ -49,7 +49,7 @@
       },
     },
     "packages/svg": {
-      "name": "sigil",
+      "name": "sigil-js",
       "version": "0.1.0",
       "dependencies": {
         "sigil-core": "workspace:*",
@@ -63,8 +63,8 @@
       "dependencies": {
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
-        "sigil": "workspace:*",
         "sigil-core": "workspace:*",
+        "sigil-js": "workspace:*",
         "sigil-react": "workspace:*",
       },
       "devDependencies": {
@@ -328,9 +328,9 @@
 
     "semver": ["semver@6.3.1", "", { "bin": { "semver": "bin/semver.js" } }, "sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA=="],
 
-    "sigil": ["sigil@workspace:packages/svg"],
-
     "sigil-core": ["sigil-core@workspace:packages/core"],
+
+    "sigil-js": ["sigil-js@workspace:packages/svg"],
 
     "sigil-react": ["sigil-react@workspace:packages/react"],
 
