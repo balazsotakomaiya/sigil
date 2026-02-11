@@ -1,11 +1,11 @@
-# @sigil/svg
+# sigil
 
 SVG string renderers for Sigil avatars. The main `avatar()` entry point lives here.
 
 ## Usage
 
 ```typescript
-import { avatar } from '@sigil/svg';
+import { avatar } from 'sigil';
 
 const svg = avatar('Alice Chen', { style: 'grain', size: 80 });
 // → SVG string ready for DOM injection or file output
@@ -24,7 +24,7 @@ const svg = avatar('Alice Chen', { style: 'grain', size: 80 });
 ### Individual renderers
 
 ```typescript
-import { renderGrain, renderFaces, renderTerminal, renderPixel, renderBrutalist } from '@sigil/svg';
+import { renderGrain, renderFaces, renderTerminal, renderPixel, renderBrutalist } from 'sigil';
 ```
 
 Each renderer takes `(spec, size)` and returns an SVG string.

@@ -1,11 +1,11 @@
-# @sigil/core
+# sigil-core
 
 Platform-agnostic logic for deterministic avatar generation. Hash functions, initial extraction, palette definitions, and style specs — all pure functions with zero external dependencies.
 
 ## Usage
 
 ```typescript
-import { resolve, grainStyle } from '@sigil/core';
+import { resolve, grainStyle } from 'sigil-core';
 
 // Via the style registry
 const spec = resolve('Alice Chen', 'grain');

@@ -1,4 +1,4 @@
-import type { GrainSpec } from '@sigil/core';
+import type { GrainSpec } from 'sigil-core';
 
 export function renderGrain(spec: GrainSpec, size: number): string {
 	const { initials, palette, blobs, noiseFreq, noiseSeed, fontSize } = spec;

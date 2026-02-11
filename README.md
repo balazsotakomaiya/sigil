@@ -5,7 +5,7 @@
 Deterministic, beautiful avatar generation from any name. Five distinct visual styles — all derived purely from a hash of the input string. No random state, no external services, no images to host.
 
 ```
-npm: @sigil/core · @sigil/svg · @sigil/react
+npm: sigil-core · sigil · sigil-react
 ```
 
 ## Styles
@@ -23,11 +23,11 @@ npm: @sigil/core · @sigil/svg · @sigil/react
 ### SVG string (universal JS)
 
 ```bash
-bun add @sigil/svg
+bun add sigil
 ```
 
 ```typescript
-import { avatar } from '@sigil/svg';
+import { avatar } from 'sigil';
 
 const svg = avatar('Balazs Otakomaiya', { style: 'grain', size: 80 });
 // → SVG string ready to inject into DOM or save to file
@@ -36,11 +36,11 @@ const svg = avatar('Balazs Otakomaiya', { style: 'grain', size: 80 });
 ### React component
 
 ```bash
-bun add @sigil/react
+bun add sigil-react
 ```
 
 ```tsx
-import { Avatar } from '@sigil/react';
+import { Avatar } from 'sigil-react';
 
 <Avatar name="Balazs Otakomaiya" style="terminal" size={48} />
 ```
@@ -48,11 +48,11 @@ import { Avatar } from '@sigil/react';
 ### Core only (build your own renderer)
 
 ```bash
-bun add @sigil/core
+bun add sigil-core
 ```
 
 ```typescript
-import { resolve, grainStyle } from '@sigil/core';
+import { resolve, grainStyle } from 'sigil-core';
 
 // Use the registry
 const spec = resolve('Alice Chen', 'grain');
@@ -67,7 +67,7 @@ const spec2 = grainStyle('Alice Chen');
 
 ### `avatar(name, options?)`
 
-Main entry point from `@sigil/svg`.
+Main entry point from `sigil`.
 
 | Param           | Type      | Default   | Description                                                |
 | --------------- | --------- | --------- | ---------------------------------------------------------- |

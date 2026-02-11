@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Avatar } from '@sigil/react';
-import type { StyleId } from '@sigil/core';
+import { Avatar } from 'sigil-react';
+import type { StyleId } from 'sigil-core';
 
 const STYLES: Array<{ id: StyleId; name: string; desc: string }> = [
 	{

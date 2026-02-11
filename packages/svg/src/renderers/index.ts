@@ -1,4 +1,4 @@
-import type { AvatarSpec } from '@sigil/core';
+import type { AvatarSpec } from 'sigil-core';
 import { renderFaces } from './faces';
 import { renderGrain } from './grain';
 import { renderPixel } from './pixel';

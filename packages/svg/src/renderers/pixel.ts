@@ -1,4 +1,4 @@
-import type { PixelSpec } from '@sigil/core';
+import type { PixelSpec } from 'sigil-core';
 
 export function renderPixel(spec: PixelSpec, size: number): string {
 	const { palette, bgPixels, letterBitmaps } = spec;

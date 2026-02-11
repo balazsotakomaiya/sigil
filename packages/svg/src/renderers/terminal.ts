@@ -1,4 +1,4 @@
-import type { TerminalSpec } from '@sigil/core';
+import type { TerminalSpec } from 'sigil-core';
 
 export function renderTerminal(spec: TerminalSpec, size: number): string {
 	const { initials, palette, fontSize, promptStyle, topBar, statusLine, showCursor, hashValue } =

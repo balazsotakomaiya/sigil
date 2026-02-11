@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
-import { avatar } from '@sigil/svg';
-import type { StyleId } from '@sigil/core';
+import { avatar } from 'sigil';
+import type { StyleId } from 'sigil-core';
 
 export interface AvatarProps {
 	name: string;

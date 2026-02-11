@@ -1,11 +1,11 @@
-# @sigil/react
+# sigil-react
 
 React component wrapper for Sigil avatars.
 
 ## Usage
 
 ```tsx
-import { Avatar } from '@sigil/react';
+import { Avatar } from 'sigil-react';
 
 <Avatar name="Alice Chen" style="grain" size={48} />
 ```

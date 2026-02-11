@@ -1,4 +1,4 @@
-import type { BrutalistSpec } from '@sigil/core';
+import type { BrutalistSpec } from 'sigil-core';
 
 export function renderBrutalist(spec: BrutalistSpec, size: number): string {
 	const { initials, palette, fontSize } = spec;

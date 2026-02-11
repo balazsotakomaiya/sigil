@@ -8,9 +8,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@sigil/core": "workspace:*",
-    "@sigil/svg": "workspace:*",
-    "@sigil/react": "workspace:*",
+    "sigil-core": "workspace:*",
+    "sigil": "workspace:*",
+    "sigil-react": "workspace:*",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

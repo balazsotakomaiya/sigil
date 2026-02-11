@@ -13,11 +13,11 @@
     "examples/gallery": {
       "name": "@sigil/gallery",
       "dependencies": {
-        "@sigil/core": "workspace:*",
-        "@sigil/react": "workspace:*",
-        "@sigil/svg": "workspace:*",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
+        "sigil": "workspace:*",
+        "sigil-core": "workspace:*",
+        "sigil-react": "workspace:*",
       },
       "devDependencies": {
         "@types/react": "^19.0.0",
@@ -27,17 +27,17 @@
       },
     },
     "packages/core": {
-      "name": "@sigil/core",
+      "name": "sigil-core",
       "version": "0.1.0",
       "devDependencies": {
         "typescript": "^5.7.2",
       },
     },
     "packages/react": {
-      "name": "@sigil/react",
+      "name": "sigil-react",
       "version": "0.1.0",
       "dependencies": {
-        "@sigil/svg": "workspace:*",
+        "sigil": "workspace:*",
       },
       "devDependencies": {
         "@types/react": "^19.0.0",
@@ -49,10 +49,10 @@
       },
     },
     "packages/svg": {
-      "name": "@sigil/svg",
+      "name": "sigil",
       "version": "0.1.0",
       "dependencies": {
-        "@sigil/core": "workspace:*",
+        "sigil-core": "workspace:*",
       },
       "devDependencies": {
         "typescript": "^5.7.2",
@@ -61,11 +61,11 @@
     "site": {
       "name": "@sigil/landing",
       "dependencies": {
-        "@sigil/core": "workspace:*",
-        "@sigil/react": "workspace:*",
-        "@sigil/svg": "workspace:*",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
+        "sigil": "workspace:*",
+        "sigil-core": "workspace:*",
+        "sigil-react": "workspace:*",
       },
       "devDependencies": {
         "@types/react": "^19.0.0",
@@ -246,15 +246,9 @@
 
     "@rollup/rollup-win32-x64-msvc": ["@rollup/rollup-win32-x64-msvc@4.57.1", "", { "os": "win32", "cpu": "x64" }, "sha512-mxRFDdHIWRxg3UfIIAwCm6NzvxG0jDX/wBN6KsQFTvKFqqg9vTrWUE68qEjHt19A5wwx5X5aUi2zuZT7YR0jrA=="],
 
-    "@sigil/core": ["@sigil/core@workspace:packages/core"],
-
     "@sigil/gallery": ["@sigil/gallery@workspace:examples/gallery"],
 
     "@sigil/landing": ["@sigil/landing@workspace:site"],
-
-    "@sigil/react": ["@sigil/react@workspace:packages/react"],
-
-    "@sigil/svg": ["@sigil/svg@workspace:packages/svg"],
 
     "@types/babel__core": ["@types/babel__core@7.20.5", "", { "dependencies": { "@babel/parser": "^7.20.7", "@babel/types": "^7.20.7", "@types/babel__generator": "*", "@types/babel__template": "*", "@types/babel__traverse": "*" } }, "sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA=="],
 
@@ -333,6 +327,12 @@
     "scheduler": ["scheduler@0.27.0", "", {}, "sha512-eNv+WrVbKu1f3vbYJT/xtiF5syA5HPIMtf9IgY/nKg0sWqzAUEvqY/xm7OcZc/qafLx/iO9FgOmeSAp4v5ti/Q=="],
 
     "semver": ["semver@6.3.1", "", { "bin": { "semver": "bin/semver.js" } }, "sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA=="],
+
+    "sigil": ["sigil@workspace:packages/svg"],
+
+    "sigil-core": ["sigil-core@workspace:packages/core"],
+
+    "sigil-react": ["sigil-react@workspace:packages/react"],
 
     "source-map-js": ["source-map-js@1.2.1", "", {}, "sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA=="],
 

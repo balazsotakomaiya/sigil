@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Avatar } from '@sigil/react';
-import type { StyleId } from '@sigil/core';
+import { Avatar } from 'sigil-react';
+import type { StyleId } from 'sigil-core';
 import { CodeBlock } from './CodeBlock';
 
 const STYLES: Array<{ id: StyleId; label: string; desc: string }> = [
@@ -38,20 +38,20 @@ const BRUTALIST_NAMES = ['Zara Quinn', 'Lex M', 'Ingrid Haupt', 'Otis Vane', 'Wu
 type PkgManager = 'bun' | 'npm' | 'pnpm' | 'yarn';
 
 const INSTALL_CMDS: Record<PkgManager, string> = {
-	bun: 'bun add @sigil/svg',
-	npm: 'npm install @sigil/svg',
-	pnpm: 'pnpm add @sigil/svg',
-	yarn: 'yarn add @sigil/svg',
+	bun: 'bun add sigil',
+	npm: 'npm install sigil',
+	pnpm: 'pnpm add sigil',
+	yarn: 'yarn add sigil',
 };
 
 const REACT_INSTALL_CMDS: Record<PkgManager, string> = {
-	bun: 'bun add @sigil/react',
-	npm: 'npm install @sigil/react',
-	pnpm: 'pnpm add @sigil/react',
-	yarn: 'yarn add @sigil/react',
+	bun: 'bun add sigil-react',
+	npm: 'npm install sigil-react',
+	pnpm: 'pnpm add sigil-react',
+	yarn: 'yarn add sigil-react',
 };
 
-const SVG_EXAMPLE = `import { avatar } from '@sigil/svg';
+const SVG_EXAMPLE = `import { avatar } from 'sigil';
 
 const svg = avatar('Alice Chen', {
   style: 'grain',
@@ -61,7 +61,7 @@ const svg = avatar('Alice Chen', {
 // Returns a complete SVG string
 document.body.innerHTML = svg;`;
 
-const REACT_EXAMPLE = `import { Avatar } from '@sigil/react';
+const REACT_EXAMPLE = `import { Avatar } from 'sigil-react';
 
 function UserProfile({ name }: { name: string }) {
   return (
@@ -134,14 +134,14 @@ function UsageSection({ pkgManager }: { pkgManager: PkgManager }) {
 							className={`usage-tab ${tab === 'svg' ? 'active' : ''}`}
 							onClick={() => setTab('svg')}
 						>
-							@sigil/svg
+							sigil
 						</button>
 						<button
 							type="button"
 							className={`usage-tab ${tab === 'react' ? 'active' : ''}`}
 							onClick={() => setTab('react')}
 						>
-							@sigil/react
+							sigil-react
 						</button>
 					</div>
 					<div className="usage-install">
@@ -305,7 +305,7 @@ export function App() {
 					</a>
 					<span className="footer-sep">·</span>
 					<a
-						href="https://www.npmjs.com/package/@sigil/svg"
+						href="https://www.npmjs.com/package/sigil"
 						target="_blank"
 						rel="noopener noreferrer"
 					>

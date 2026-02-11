@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'bun:test';
 import { avatar } from '../src/index';
 import { renderSpec } from '../src/renderers/index';
-import { grainStyle, facesStyle, brutalistStyle, terminalStyle, pixelStyle } from '@sigil/core';
+import { grainStyle, facesStyle, brutalistStyle, terminalStyle, pixelStyle } from 'sigil-core';
 
 describe('avatar()', () => {
 	test('returns valid SVG string', () => {

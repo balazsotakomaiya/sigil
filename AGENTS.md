@@ -17,9 +17,9 @@ Sigil is a deterministic avatar generation library. Given any name string, it pr
 
 | Package        | Path              | Purpose                                      |
 | -------------- | ----------------- | -------------------------------------------- |
-| `@sigil/core`  | `packages/core/`  | Pure logic: hash, initials, palettes, styles |
-| `@sigil/svg`   | `packages/svg/`   | SVG string renderers, `avatar()` entry point |
-| `@sigil/react` | `packages/react/` | `<Avatar>` React component                  |
+| `sigil-core`   | `packages/core/`  | Pure logic: hash, initials, palettes, styles |
+| `sigil`        | `packages/svg/`   | SVG string renderers, `avatar()` entry point |
+| `sigil-react`  | `packages/react/` | `<Avatar>` React component                  |
 
 Dependency chain: `core` → `svg` → `react`. Core has zero external deps.
 
