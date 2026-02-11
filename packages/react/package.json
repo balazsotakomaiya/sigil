@@ -1,6 +1,6 @@
 {
   "name": "sigil-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/balazsotakomaiya/sigil",
@@ -17,7 +17,9 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "bun build ./src/index.ts --outdir ./dist --target=browser --format=esm --external react && bun x tsc --emitDeclarationOnly",
     "test": "bun test"
