@@ -39,20 +39,25 @@ jobs:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org'
 
+      - name: Copy root README into sigil and sigil-react
+        run: |
+          cp README.md packages/svg/README.md
+          cp README.md packages/react/README.md
+
       - name: Publish sigil-core
-        run: npm publish --access public
+        run: npm publish --provenance --access public
         working-directory: packages/core
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish sigil
-        run: npm publish --access public
+        run: npm publish --provenance --access public
         working-directory: packages/svg
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish sigil-react
-        run: npm publish --access public
+        run: npm publish --provenance --access public
         working-directory: packages/react
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
