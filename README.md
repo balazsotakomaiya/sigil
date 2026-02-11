@@ -1,4 +1,6 @@
-# 🫧 Sigil
+# Sigil
+
+![Sigil Banner](.github/assets/banner.png)
 
 Deterministic, beautiful avatar generation from any name. Five distinct visual styles — all derived purely from a hash of the input string. No random state, no external services, no images to host.
 
@@ -8,13 +10,13 @@ npm: @sigil/core · @sigil/svg · @sigil/react
 
 ## Styles
 
-| Style         | Description                                                           |
-| ------------- | --------------------------------------------------------------------- |
-| **Grain**     | Film-grain texture via SVG noise, earthy palettes, Instrument Serif   |
-| **Faces**     | Generative abstract faces — eyes, brows, nose, mouth, blush, freckles |
-| **Terminal**  | CRT scanlines, phosphor glow, monospace prompts, dark palettes        |
-| **Pixel**     | Custom 5×5 pixel font, retro gaming palettes, pixel debris            |
-| **Brutalist** | Knockout stencil — monospace initials punched through industrial color |
+| Style | Preview | Description |
+| --- | --- | --- |
+| **Grain** | <img src=".github/assets/example-grain-01.svg" width="48"> <img src=".github/assets/example-grain-02.svg" width="48"> <img src=".github/assets/example-grain-03.svg" width="48"> | Film-grain texture via SVG noise, earthy palettes |
+| **Faces** | <img src=".github/assets/example-faces-01.svg" width="48"> <img src=".github/assets/example-faces-02.svg" width="48"> <img src=".github/assets/example-faces-03.svg" width="48"> | Generative abstract faces — eyes, brows, nose, mouth |
+| **Terminal** | <img src=".github/assets/example-terminal-01.svg" width="48"> <img src=".github/assets/example-terminal-02.svg" width="48"> <img src=".github/assets/example-terminal-03.svg" width="48"> | CRT scanlines, phosphor glow, monospace prompts |
+| **Pixel** | <img src=".github/assets/example-pixel-01.svg" width="48"> <img src=".github/assets/example-pixel-02.svg" width="48"> <img src=".github/assets/example-pixel-03.svg" width="48"> | Custom 5×5 pixel font, retro gaming palettes |
+| **Brutalist** | <img src=".github/assets/example-brutalist-01.svg" width="48"> <img src=".github/assets/example-brutalist-02.svg" width="48"> <img src=".github/assets/example-brutalist-03.svg" width="48"> | Knockout stencil — initials punched through color |
 
 ## Quick Start
 
@@ -108,6 +110,7 @@ sigil/
 │   ├── core/          # Platform-agnostic logic (TypeScript)
 │   ├── svg/           # SVG string renderer
 │   └── react/         # React component
+├── site/              # Landing page (Vite + React)
 ├── examples/
 │   └── gallery/       # Interactive gallery (Bun server)
 ├── biome.json

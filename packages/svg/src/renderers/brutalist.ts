@@ -2,7 +2,7 @@ import type { BrutalistSpec } from '@sigil/core';
 
 export function renderBrutalist(spec: BrutalistSpec, size: number): string {
 	const { initials, palette, fontSize } = spec;
-	const uid = `br${fontSize}`;
+	const uid = `br${initials.toLowerCase()}${fontSize}`;
 
 	return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 100 100">
   <defs>

@@ -26,15 +26,15 @@ jobs:
 
       - run: bun install --frozen-lockfile
 
-      - name: Build landing
+      - name: Build site
         run: bun run build
-        working-directory: examples/landing
+        working-directory: site
         env:
           CI: true
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: examples/landing/dist
+          path: site/dist
 
   deploy:
     needs: build

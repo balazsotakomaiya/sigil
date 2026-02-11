@@ -2,17 +2,27 @@ import { avatar } from '../packages/svg/src/index';
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-const styles = [
-	{ style: 'grain', name: 'Grain Example' },
-	{ style: 'faces', name: 'Faces Demo' },
-	{ style: 'terminal', name: 'Terminal Unit' },
-	{ style: 'pixel', name: 'Pixel Avatar' },
-	{ style: 'brutalist', name: 'Brutalist Style' },
-] as const;
+const styles = ['grain', 'faces', 'terminal', 'pixel', 'brutalist'] as const;
 
-for (const { style, name } of styles) {
-	const svg = avatar(name, { style, size: 256 });
-	const filename = `example-${style}.svg`;
-	writeFileSync(join('docs', filename), svg);
-	console.log(`Created ${filename}`);
+const names = [
+	'Alice Wonder',
+	'Ben Dover',
+	'Cal Zorn',
+	'Dee Light',
+	'Evan Gelist',
+	'Fay Kwest',
+	'Gus Tavo',
+	'Hue Mann',
+	'Ivy League',
+	'Jay Walker',
+];
+
+for (const style of styles) {
+	for (let i = 0; i < 10; i++) {
+		const name = names[i];
+		const svg = avatar(name, { style, size: 256 });
+		const filename = `example-${style}-${String(i + 1).padStart(2, '0')}.svg`;
+		writeFileSync(join('docs', filename), svg);
+		console.log(`Created ${filename} (${name})`);
+	}
 }

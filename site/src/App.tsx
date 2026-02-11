@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Avatar } from '@sigil/react';
 import type { StyleId } from '@sigil/core';
+import { CodeBlock } from './CodeBlock';
 
 const STYLES: Array<{ id: StyleId; label: string; desc: string }> = [
 	{
@@ -31,6 +32,8 @@ const STYLES: Array<{ id: StyleId; label: string; desc: string }> = [
 ];
 
 const SAMPLE_NAMES = ['Alice Chen', 'Bob M', 'Clara J', 'David Kim', 'Emma W', 'Fatima'];
+
+const BRUTALIST_NAMES = ['Zara Quinn', 'Lex M', 'Ingrid Haupt', 'Otis Vane', 'Wu Jian', 'Petra K'];
 
 type PkgManager = 'bun' | 'npm' | 'pnpm' | 'yarn';
 
@@ -148,9 +151,7 @@ function UsageSection({ pkgManager }: { pkgManager: PkgManager }) {
 								: REACT_INSTALL_CMDS[pkgManager]}
 						</code>
 					</div>
-					<pre className="code-block">
-						<code>{tab === 'svg' ? SVG_EXAMPLE : REACT_EXAMPLE}</code>
-					</pre>
+							<CodeBlock code={tab === 'svg' ? SVG_EXAMPLE : REACT_EXAMPLE} />
 				</div>
 
 				<div className="usage-preview">
@@ -186,13 +187,36 @@ function StylesSection() {
 							<span className="style-card-id">{style.id}</span>
 						</div>
 						<p className="style-card-desc">{style.desc}</p>
-						<div className="style-card-avatars">
-							{SAMPLE_NAMES.map((name) => (
+							<div className="style-card-avatars">
+							{(style.id === 'brutalist' ? BRUTALIST_NAMES : SAMPLE_NAMES).map((name) => (
 								<Avatar key={name} name={name} style={style.id} size={44} />
 							))}
 						</div>
 					</div>
 				))}
+				<div className="style-card style-card--soon">
+					<div className="style-card-header">
+						<span className="style-card-name">More coming</span>
+						<span className="style-card-id">???</span>
+					</div>
+					<p className="style-card-desc">
+						New styles are in the works. Have an idea?
+						{' '}
+						<a
+							href="https://github.com/balazsotakomaiya/sigil/issues"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="soon-link"
+						>
+							Open an issue.
+						</a>
+					</p>
+					<div className="soon-placeholder">
+						<span>?</span>
+						<span>?</span>
+						<span>?</span>
+					</div>
+				</div>
 			</div>
 		</section>
 	);
@@ -205,6 +229,15 @@ export function App() {
 
 	return (
 		<div className="page">
+			<div className="rulers" aria-hidden="true">
+				<div className="ruler ruler--v ruler--left" />
+				<div className="ruler ruler--v ruler--right" />
+				<div className="ruler ruler--v ruler--content-left" />
+				<div className="ruler ruler--v ruler--content-right" />
+				<div className="ruler ruler--h ruler--top" />
+				<div className="ruler ruler--h ruler--bottom" />
+			</div>
+
 			<nav className="nav">
 				<span className="nav-logo">sigil</span>
 				<div className="nav-links">
@@ -226,8 +259,8 @@ export function App() {
 					Beautiful avatars from<br />any string
 				</h1>
 				<p className="hero-desc">
-					Five visual styles, zero runtime randomness. Everything derives from the input —
-					same name, same avatar, every time.
+					Zero dependencies. Drop‑in easy. Fully deterministic.
+					Same name, same avatar — every single time.
 				</p>
 
 				<InstallBlock pkgManager={pkgManager} setPkgManager={setPkgManager} />
@@ -253,8 +286,11 @@ export function App() {
 				</div>
 			</header>
 
+			<div className="ruler-divider" aria-hidden="true" />
 			<StylesSection />
+			<div className="ruler-divider" aria-hidden="true" />
 			<UsageSection pkgManager={pkgManager} />
+			<div className="ruler-divider" aria-hidden="true" />
 
 			<footer className="footer">
 				<div className="footer-inner">
@@ -274,6 +310,17 @@ export function App() {
 						rel="noopener noreferrer"
 					>
 						npm
+					</a>
+				</div>
+				<div className="footer-credit">
+					Made by{' '}
+					<a
+						href="https://otakomaiya.com"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="footer-credit-link"
+					>
+						Balazs Otakomaiya
 					</a>
 				</div>
 			</footer>
