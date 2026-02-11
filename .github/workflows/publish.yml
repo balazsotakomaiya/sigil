@@ -45,19 +45,40 @@ jobs:
           cp README.md packages/react/README.md
 
       - name: Publish sigil-core
-        run: npm publish --provenance --access public
+        run: |
+          PKG=$(node -p "require('./package.json').name")
+          VER=$(node -p "require('./package.json').version")
+          if npm view "${PKG}@${VER}" version 2>/dev/null; then
+            echo "${PKG}@${VER} already published, skipping"
+          else
+            npm publish --provenance --access public
+          fi
         working-directory: packages/core
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Publish sigil
-        run: npm publish --provenance --access public
+      - name: Publish sigil-js
+        run: |
+          PKG=$(node -p "require('./package.json').name")
+          VER=$(node -p "require('./package.json').version")
+          if npm view "${PKG}@${VER}" version 2>/dev/null; then
+            echo "${PKG}@${VER} already published, skipping"
+          else
+            npm publish --provenance --access public
+          fi
         working-directory: packages/svg
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish sigil-react
-        run: npm publish --provenance --access public
+        run: |
+          PKG=$(node -p "require('./package.json').name")
+          VER=$(node -p "require('./package.json').version")
+          if npm view "${PKG}@${VER}" version 2>/dev/null; then
+            echo "${PKG}@${VER} already published, skipping"
+          else
+            npm publish --provenance --access public
+          fi
         working-directory: packages/react
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
