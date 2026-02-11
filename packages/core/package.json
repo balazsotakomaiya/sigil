@@ -1,6 +1,11 @@
 {
   "name": "sigil-core",
   "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/balazsotakomaiya/sigil",
+    "directory": "packages/core"
+  },
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
