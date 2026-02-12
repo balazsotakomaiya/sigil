@@ -39,10 +39,11 @@ jobs:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Copy root README into gen and react
+      - name: Copy root README into gen and react with fixed image URLs
         run: |
-          cp README.md packages/svg/README.md
-          cp README.md packages/react/README.md
+          # Rewrite relative asset paths to absolute GitHub URLs for npm
+          sed 's|src="assets/|src="https://github.com/balazsotakomaiya/sigil/raw/HEAD/assets/|g' README.md > packages/svg/README.md
+          sed 's|src="assets/|src="https://github.com/balazsotakomaiya/sigil/raw/HEAD/assets/|g' README.md > packages/react/README.md
 
       - name: Publish @sigil-ts/core
         run: |
