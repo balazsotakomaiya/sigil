@@ -321,10 +321,18 @@ body {
 }
 
 .demo-row {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	display: flex;
 	gap: 24px;
-	justify-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+	.demo-row {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+	}
 }
 
 .demo-cell {
