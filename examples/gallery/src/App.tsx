@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Avatar } from 'sigil-react';
-import type { StyleId } from 'sigil-core';
+import { Avatar } from '@sigil-ts/react';
+import type { StyleId } from '@sigil-ts/core';
 
 const STYLES: Array<{ id: StyleId; name: string; desc: string }> = [
 	{
@@ -27,6 +27,21 @@ const STYLES: Array<{ id: StyleId; name: string; desc: string }> = [
 		id: 'brutalist',
 		name: 'Brutalist',
 		desc: 'Knockout stencil — monospace initials punched out of a solid block, revealing the background through the letterforms. Industrial palettes, zero decoration.',
+	},
+	{
+		id: 'bots',
+		name: 'Bots',
+		desc: 'Geometric robots on dark backgrounds — square/pill/round heads, screen visors, antenna variants, body panel details.',
+	},
+	{
+		id: 'ghosts',
+		name: 'Ghosts',
+		desc: 'Translucent floating ghost characters with wavy bottoms, big expressive eyes, blush cheeks, and tiny sparkles.',
+	},
+	{
+		id: 'bloom',
+		name: 'Bloom',
+		desc: 'One dominant blurred orb plus a small spark. Heavy grain overlay, DM Sans typography. Moody and atmospheric.',
 	},
 ];
 
@@ -85,7 +100,7 @@ export function App() {
 		<>
 			<h1 className="page-title">Sigil</h1>
 			<p className="page-sub">
-				Five avatar styles generated deterministically from any name. Type a name below to
+				Eight avatar styles generated deterministically from any name. Type a name below to
 				see your avatar in every style.
 			</p>
 

@@ -8,6 +8,13 @@ export {
 	TERMINAL_PALETTES,
 	PIXEL_PALETTES,
 	BRUTALIST_PALETTES,
+	BOT_BGS,
+	BOT_BODIES,
+	BOT_SCREENS,
+	GHOST_BGS,
+	GHOST_COLORS,
+	GHOST_CHEEKS,
+	BLOOM_PALETTES,
 } from './palettes';
 export { PIXEL_FONT } from './pixel-font';
 export {
@@ -17,6 +24,9 @@ export {
 	terminalStyle,
 	pixelStyle,
 	brutalistStyle,
+	botsStyle,
+	ghostsStyle,
+	bloomStyle,
 } from './styles/index';
 export type {
 	StyleId,
@@ -28,4 +38,7 @@ export type {
 	TerminalSpec,
 	PixelSpec,
 	BrutalistSpec,
+	BotsSpec,
+	GhostsSpec,
+	BloomSpec,
 } from './types';

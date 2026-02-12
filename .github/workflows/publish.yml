@@ -39,12 +39,12 @@ jobs:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Copy root README into sigil and sigil-react
+      - name: Copy root README into gen and react
         run: |
           cp README.md packages/svg/README.md
           cp README.md packages/react/README.md
 
-      - name: Publish sigil-core
+      - name: Publish @sigil-ts/core
         run: |
           PKG=$(node -p "require('./package.json').name")
           VER=$(node -p "require('./package.json').version")
@@ -57,7 +57,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Publish sigil-gen
+      - name: Publish @sigil-ts/gen
         run: |
           PKG=$(node -p "require('./package.json').name")
           VER=$(node -p "require('./package.json').version")
@@ -70,7 +70,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Publish sigil-react
+      - name: Publish @sigil-ts/react
         run: |
           PKG=$(node -p "require('./package.json').name")
           VER=$(node -p "require('./package.json').version")

@@ -1,4 +1,4 @@
-export type StyleId = 'grain' | 'faces' | 'terminal' | 'pixel' | 'brutalist';
+export type StyleId = 'grain' | 'faces' | 'terminal' | 'pixel' | 'brutalist' | 'bots' | 'ghosts' | 'bloom';
 
 export interface AvatarRequest {
 	name: string;
@@ -66,11 +66,64 @@ export interface BrutalistSpec {
 	fontSize: number;
 }
 
+// ── Bots ────────────────────────────────────────────────────
+export interface BotsSpec {
+	style: 'bots';
+	initials: string;
+	palette: { bg: string; body: string; screen: string };
+	headShape: number;
+	headW: number;
+	headH: number;
+	visorType: number;
+	eyeType: number;
+	antennaType: number;
+	bodyW: number;
+	bodyH: number;
+	armType: number;
+	legType: number;
+	panelType: number;
+}
+
+// ── Ghosts ───────────────────────────────────────────────────
+export interface GhostsSpec {
+	style: 'ghosts';
+	initials: string;
+	palette: { bg: string; color: string; cheek: string };
+	bodyW: number;
+	bodyTop: number;
+	bodyBottom: number;
+	numWaves: number;
+	waveAmp: number;
+	eyeType: number;
+	eyeY: number;
+	eyeSpacing: number;
+	mouthType: number;
+	mouthY: number;
+	hasBlush: boolean;
+	floatY: number;
+	tilt: number;
+	sparkles: Array<{ cx: number; cy: number; r: number }>;
+}
+
+// ── Bloom ────────────────────────────────────────────────────
+export interface BloomSpec {
+	style: 'bloom';
+	initials: string;
+	palette: { bg: string; orbs: [string, string] };
+	mainOrb: { cx: number; cy: number; r: number };
+	sparkOrb: { cx: number; cy: number };
+	grainSeed: number;
+	fontSize: number;
+}
+
 export type AvatarSpec =
 	| GrainSpec
 	| FacesSpec
 	| TerminalSpec
 	| PixelSpec
-	| BrutalistSpec;
+	| BrutalistSpec
+	| BotsSpec
+	| GhostsSpec
+	| BloomSpec;
 
 export type StyleFunction = (name: string) => AvatarSpec;

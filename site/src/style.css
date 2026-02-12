@@ -55,7 +55,7 @@ body {
 
 .nav-logo {
 	font-family: 'Syne', var(--font-sans);
-	font-size: 20px;
+	font-size: 26px;
 	font-weight: 700;
 	color: var(--text-primary);
 	letter-spacing: -0.5px;
@@ -302,10 +302,10 @@ body {
 }
 
 .demo-row {
-	display: flex;
-	justify-content: center;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
 	gap: 24px;
-	flex-wrap: wrap;
+	justify-items: center;
 }
 
 .demo-cell {

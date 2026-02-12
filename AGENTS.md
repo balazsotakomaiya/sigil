@@ -15,17 +15,17 @@ Sigil is a deterministic avatar generation library. Given any name string, it pr
 
 ## Packages
 
-| Package        | Path              | Purpose                                      |
-| -------------- | ----------------- | -------------------------------------------- |
-| `sigil-core`   | `packages/core/`  | Pure logic: hash, initials, palettes, styles |
-| `sigil-gen`    | `packages/svg/`   | SVG string renderers, `avatar()` entry point |
-| `sigil-react`  | `packages/react/` | `<Avatar>` React component                  |
+| Package           | Path              | Purpose                                      |
+| ----------------- | ----------------- | -------------------------------------------- |
+| `@sigil-ts/core`  | `packages/core/`  | Pure logic: hash, initials, palettes, styles |
+| `@sigil-ts/gen`   | `packages/svg/`   | SVG string renderers, `avatar()` entry point |
+| `@sigil-ts/react` | `packages/react/` | `<Avatar>` React component                   |
 
 Dependency chain: `core` → `svg` → `react`. Core has zero external deps.
 
 ## Styles
 
-Five styles: **grain**, **faces**, **brutalist**, **terminal**, **pixel**.
+Eight styles: **grain**, **faces**, **brutalist**, **terminal**, **pixel**, **bots**, **ghosts**, **bloom**.
 
 Each style is a pure function `(name: string) → StyleSpec` in `packages/core/src/styles/`. The spec is a platform-agnostic data structure. Renderers in `packages/svg/src/renderers/` translate specs into SVG strings.
 

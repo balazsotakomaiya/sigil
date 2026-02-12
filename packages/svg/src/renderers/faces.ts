@@ -1,4 +1,4 @@
-import type { FacesSpec } from 'sigil-core';
+import type { FacesSpec } from '@sigil-ts/core';
 
 export function renderFaces(spec: FacesSpec, size: number): string {
 	const {

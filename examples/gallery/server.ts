@@ -1,5 +1,5 @@
-import { avatar } from 'sigil-gen';
-import type { StyleId } from 'sigil-core';
+import { avatar } from '@sigil-ts/gen';
+import type { StyleId } from '@sigil-ts/core';
 
 const STYLES: Array<{ id: StyleId; name: string; desc: string }> = [
 	{
@@ -26,6 +26,21 @@ const STYLES: Array<{ id: StyleId; name: string; desc: string }> = [
 		id: 'pixel',
 		name: 'Pixel',
 		desc: 'Custom 5×5 pixel font rendered as SVG rects. Gameboy, Pico-8, synthwave, and matrix palettes. Scattered pixel debris for texture.',
+	},
+	{
+		id: 'bots',
+		name: 'Bots',
+		desc: 'Geometric robots on dark backgrounds — square/pill/round heads, screen visors with different eye types, antenna variants, body panel details. Retro-futuristic, colorful, charming.',
+	},
+	{
+		id: 'ghosts',
+		name: 'Ghosts',
+		desc: 'Translucent floating ghost characters with wavy bottoms, big expressive eyes, blush cheeks, and tiny sparkle particles. Soft pastels on dark backgrounds.',
+	},
+	{
+		id: 'bloom',
+		name: 'Bloom',
+		desc: 'One dominant blurred orb plus a small spark on dark backgrounds. Heavy grain overlay, DM Sans typography. Moody, atmospheric, asymmetric.',
 	},
 ];
 
@@ -187,7 +202,7 @@ function renderPage(userName: string): string {
 </head>
 <body>
 <h1 class="page-title">Sigil — Style Gallery</h1>
-<p class="page-sub">Five avatar styles generated deterministically from any name. Type a name below to see your avatar in every style.</p>
+<p class="page-sub">Eight avatar styles generated deterministically from any name. Type a name below to see your avatar in every style.</p>
 
 <div class="input-area">
   <div class="input-label">Try your name</div>

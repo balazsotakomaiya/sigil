@@ -1,5 +1,5 @@
 {
-  "name": "sigil-gen",
+  "name": "@sigil-ts/gen",
   "version": "0.2.1",
   "repository": {
     "type": "git",
@@ -25,7 +25,7 @@
     "test": "bun test"
   },
   "dependencies": {
-    "sigil-core": "workspace:*"
+    "@sigil-ts/core": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.7.2"

@@ -1,5 +1,5 @@
-import { resolve } from 'sigil-core';
-import type { AvatarRequest, StyleId } from 'sigil-core';
+import { resolve } from '@sigil-ts/core';
+import type { AvatarRequest, StyleId } from '@sigil-ts/core';
 import { renderSpec } from './renderers/index';
 
 export interface AvatarOptions {
@@ -20,5 +20,8 @@ export {
 	renderTerminal,
 	renderPixel,
 	renderBrutalist,
+	renderBots,
+	renderGhosts,
+	renderBloom,
 } from './renderers/index';
-export type { StyleId } from 'sigil-core';
+export type { StyleId } from '@sigil-ts/core';

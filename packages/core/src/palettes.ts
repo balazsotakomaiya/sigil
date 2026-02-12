@@ -70,6 +70,91 @@ export const PIXEL_PALETTES: Array<{ bg: string; fg: string; hi: string }> = [
 	{ bg: '#2A2136', fg: '#C65197', hi: '#6DC2CA' },
 ];
 
+export const BOT_BGS = [
+	'#1A1E2E',
+	'#1E2A1E',
+	'#2A1A1E',
+	'#1A1A2A',
+	'#2A2A1A',
+	'#1E1A2A',
+	'#1A2A2A',
+	'#2A1E2A',
+];
+
+export const BOT_BODIES = [
+	'#38BDF8',
+	'#A78BFA',
+	'#34D399',
+	'#FB923C',
+	'#F472B6',
+	'#FBBF24',
+	'#EF4444',
+	'#2DD4BF',
+	'#818CF8',
+	'#F97316',
+];
+
+export const BOT_SCREENS = [
+	'#0C4A6E',
+	'#3B0764',
+	'#064E3B',
+	'#78350F',
+	'#831843',
+	'#713F12',
+	'#7F1D1D',
+	'#134E4A',
+	'#312E81',
+	'#7C2D12',
+];
+
+export const GHOST_BGS = [
+	'#1A1E2E',
+	'#1E1A2A',
+	'#0F1923',
+	'#1A1A22',
+	'#161620',
+	'#1C1826',
+	'#14181E',
+	'#1A1420',
+];
+
+export const GHOST_COLORS = [
+	'#E8E4FF',
+	'#FFE4E8',
+	'#E4FFF0',
+	'#FFF4E4',
+	'#E4F0FF',
+	'#F0E4FF',
+	'#FFE8E4',
+	'#E4FFE8',
+	'#FFE4F4',
+	'#F4FFE4',
+];
+
+export const GHOST_CHEEKS = [
+	'#FF9EC4',
+	'#FF9E9E',
+	'#9EFFBB',
+	'#FFD89E',
+	'#9EC4FF',
+	'#D49EFF',
+	'#FF9E9E',
+	'#9EFFC4',
+	'#FF9ED4',
+	'#D4FF9E',
+];
+
+export const BLOOM_PALETTES: Array<{ bg: string; orbs: [string, string] }> = [
+	{ bg: '#0C0C10', orbs: ['#FF6B6B', '#4ECDC4'] },
+	{ bg: '#0A0C12', orbs: ['#A855F7', '#06B6D4'] },
+	{ bg: '#0E0A12', orbs: ['#EC4899', '#8B5CF6'] },
+	{ bg: '#0A100E', orbs: ['#10B981', '#F59E0B'] },
+	{ bg: '#100E0A', orbs: ['#F97316', '#EF4444'] },
+	{ bg: '#0A0C12', orbs: ['#38BDF8', '#818CF8'] },
+	{ bg: '#0E0A0A', orbs: ['#FB7185', '#FBBF24'] },
+	{ bg: '#0C0A12', orbs: ['#C084FC', '#F472B6'] },
+];
+
 export const BRUTALIST_PALETTES: Array<{ bg: string; fg: string }> = [
 	{ bg: '#FF5C00', fg: '#000000' },
 	{ bg: '#0400FF', fg: '#CCFF00' },

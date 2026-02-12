@@ -2,32 +2,35 @@
 
 ![Sigil Banner](.github/assets/banner.png)
 
-Deterministic, beautiful avatar generation from any name. Five distinct visual styles — all derived purely from a hash of the input string. No random state, no external services, no images to host.
+Deterministic, beautiful avatar generation from any name. Eight distinct visual styles — all derived purely from a hash of the input string. No random state, no external services, no images to host.
 
 ```
-npm: sigil-core · sigil-gen · sigil-react
+npm: @sigil-ts/core · @sigil-ts/gen · @sigil-ts/react
 ```
 
 ## Styles
 
-| Style | Preview | Description |
-| --- | --- | --- |
-| **Grain** | <img src=".github/assets/example-grain-01.svg" width="48"> <img src=".github/assets/example-grain-02.svg" width="48"> <img src=".github/assets/example-grain-03.svg" width="48"> | Film-grain texture via SVG noise, earthy palettes |
-| **Faces** | <img src=".github/assets/example-faces-01.svg" width="48"> <img src=".github/assets/example-faces-02.svg" width="48"> <img src=".github/assets/example-faces-03.svg" width="48"> | Generative abstract faces — eyes, brows, nose, mouth |
-| **Terminal** | <img src=".github/assets/example-terminal-01.svg" width="48"> <img src=".github/assets/example-terminal-02.svg" width="48"> <img src=".github/assets/example-terminal-03.svg" width="48"> | CRT scanlines, phosphor glow, monospace prompts |
-| **Pixel** | <img src=".github/assets/example-pixel-01.svg" width="48"> <img src=".github/assets/example-pixel-02.svg" width="48"> <img src=".github/assets/example-pixel-03.svg" width="48"> | Custom 5×5 pixel font, retro gaming palettes |
-| **Brutalist** | <img src=".github/assets/example-brutalist-01.svg" width="48"> <img src=".github/assets/example-brutalist-02.svg" width="48"> <img src=".github/assets/example-brutalist-03.svg" width="48"> | Knockout stencil — initials punched through color |
+| Style         | Preview                                                                                                                                                                                      | Description                                          |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| **Bloom**     | <img src=".github/assets/example-bloom-01.svg" width="48"> <img src=".github/assets/example-bloom-02.svg" width="48"> <img src=".github/assets/example-bloom-03.svg" width="48">             | Blurred orbs, heavy grain, moody atmospheric glow    |
+| **Grain**     | <img src=".github/assets/example-grain-01.svg" width="48"> <img src=".github/assets/example-grain-02.svg" width="48"> <img src=".github/assets/example-grain-03.svg" width="48">             | Film-grain texture via SVG noise, earthy palettes    |
+| **Brutalist** | <img src=".github/assets/example-brutalist-01.svg" width="48"> <img src=".github/assets/example-brutalist-02.svg" width="48"> <img src=".github/assets/example-brutalist-03.svg" width="48"> | Knockout stencil — initials punched through color    |
+| **Terminal**  | <img src=".github/assets/example-terminal-01.svg" width="48"> <img src=".github/assets/example-terminal-02.svg" width="48"> <img src=".github/assets/example-terminal-03.svg" width="48">    | CRT scanlines, phosphor glow, monospace prompts      |
+| **Pixel**     | <img src=".github/assets/example-pixel-01.svg" width="48"> <img src=".github/assets/example-pixel-02.svg" width="48"> <img src=".github/assets/example-pixel-03.svg" width="48">             | Custom 5×5 pixel font, retro gaming palettes         |
+| **Ghosts**    | <img src=".github/assets/example-ghosts-01.svg" width="48"> <img src=".github/assets/example-ghosts-02.svg" width="48"> <img src=".github/assets/example-ghosts-03.svg" width="48">          | Floating ghosts — wavy bottoms, expressive eyes      |
+| **Bots**      | <img src=".github/assets/example-bots-01.svg" width="48"> <img src=".github/assets/example-bots-02.svg" width="48"> <img src=".github/assets/example-bots-03.svg" width="48">                | Geometric robots — visors, antenna, body panels      |
+| **Faces**     | <img src=".github/assets/example-faces-01.svg" width="48"> <img src=".github/assets/example-faces-02.svg" width="48"> <img src=".github/assets/example-faces-03.svg" width="48">             | Generative abstract faces — eyes, brows, nose, mouth |
 
 ## Quick Start
 
 ### SVG string (universal JS)
 
 ```bash
-bun add sigil-gen
+bun add @sigil-ts/gen
 ```
 
 ```typescript
-import { avatar } from 'sigil-gen';
+import { avatar } from '@sigil-ts/gen';
 
 const svg = avatar('Balazs Otakomaiya', { style: 'grain', size: 80 });
 // → SVG string ready to inject into DOM or save to file
@@ -36,11 +39,11 @@ const svg = avatar('Balazs Otakomaiya', { style: 'grain', size: 80 });
 ### React component
 
 ```bash
-bun add sigil-react
+bun add @sigil-ts/react
 ```
 
 ```tsx
-import { Avatar } from 'sigil-react';
+import { Avatar } from '@sigil-ts/react';
 
 <Avatar name="Balazs Otakomaiya" style="terminal" size={48} />
 ```
@@ -48,11 +51,11 @@ import { Avatar } from 'sigil-react';
 ### Core only (build your own renderer)
 
 ```bash
-bun add sigil-core
+bun add @sigil-ts/core
 ```
 
 ```typescript
-import { resolve, grainStyle } from 'sigil-core';
+import { resolve, grainStyle } from '@sigil-ts/core';
 
 // Use the registry
 const spec = resolve('Alice Chen', 'grain');
@@ -67,13 +70,13 @@ const spec2 = grainStyle('Alice Chen');
 
 ### `avatar(name, options?)`
 
-Main entry point from `sigil-gen`.
+Main entry point from `@sigil-ts/gen`.
 
-| Param           | Type      | Default   | Description                                                |
-| --------------- | --------- | --------- | ---------------------------------------------------------- |
-| `name`          | `string`  | —         | Name to generate avatar for                                |
-| `options.style` | `StyleId` | `'grain'` | One of: `grain`, `faces`, `terminal`, `pixel`, `brutalist` |
-| `options.size`  | `number`  | `80`      | Output size in pixels                                      |
+| Param           | Type      | Default   | Description                                                                           |
+| --------------- | --------- | --------- | ------------------------------------------------------------------------------------- |
+| `name`          | `string`  | —         | Name to generate avatar for                                                           |
+| `options.style` | `StyleId` | `'grain'` | One of: `grain`, `faces`, `terminal`, `pixel`, `brutalist`, `bots`, `ghosts`, `bloom` |
+| `options.size`  | `number`  | `80`      | Output size in pixels                                                                 |
 
 Returns an SVG string.
 

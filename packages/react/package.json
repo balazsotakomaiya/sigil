@@ -1,5 +1,5 @@
 {
-  "name": "sigil-react",
+  "name": "@sigil-ts/react",
   "version": "0.2.1",
   "repository": {
     "type": "git",
@@ -25,7 +25,7 @@
     "test": "bun test"
   },
   "dependencies": {
-    "sigil-gen": "workspace:*"
+    "@sigil-ts/gen": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=18"

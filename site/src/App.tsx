@@ -1,18 +1,23 @@
 import { useState } from 'react';
-import { Avatar } from 'sigil-react';
-import type { StyleId } from 'sigil-core';
+import { Avatar } from '@sigil-ts/react';
+import type { StyleId } from '@sigil-ts/core';
 import { CodeBlock } from './CodeBlock';
 
 const STYLES: Array<{ id: StyleId; label: string; desc: string }> = [
+	{
+		id: 'bloom',
+		label: 'Bloom',
+		desc: 'Blurred orbs on dark backgrounds with heavy grain. Moody and atmospheric.',
+	},
 	{
 		id: 'grain',
 		label: 'Grain',
 		desc: 'Film-grain texture via SVG noise with warm earthy palettes.',
 	},
 	{
-		id: 'faces',
-		label: 'Faces',
-		desc: 'Generative faces with eyes, brows, nose, and mouth — all from the name.',
+		id: 'brutalist',
+		label: 'Brutalist',
+		desc: 'Stencil initials punched from a solid block. Zero decoration.',
 	},
 	{
 		id: 'terminal',
@@ -25,9 +30,19 @@ const STYLES: Array<{ id: StyleId; label: string; desc: string }> = [
 		desc: 'Custom 5×5 pixel font rendered as SVG rects. Retro palettes.',
 	},
 	{
-		id: 'brutalist',
-		label: 'Brutalist',
-		desc: 'Stencil initials punched from a solid block. Zero decoration.',
+		id: 'ghosts',
+		label: 'Ghosts',
+		desc: 'Floating ghost characters with wavy bottoms, expressive eyes, and sparkles.',
+	},
+	{
+		id: 'bots',
+		label: 'Bots',
+		desc: 'Geometric robots — square heads, screen visors, antenna variants.',
+	},
+	{
+		id: 'faces',
+		label: 'Faces',
+		desc: 'Generative faces with eyes, brows, nose, and mouth — all from the name.',
 	},
 ];
 
@@ -38,20 +53,20 @@ const BRUTALIST_NAMES = ['Zara Quinn', 'Lex M', 'Ingrid Haupt', 'Otis Vane', 'Wu
 type PkgManager = 'bun' | 'npm' | 'pnpm' | 'yarn';
 
 const INSTALL_CMDS: Record<PkgManager, string> = {
-	bun: 'bun add sigil-gen',
-	npm: 'npm install sigil-gen',
-	pnpm: 'pnpm add sigil-gen',
-	yarn: 'yarn add sigil-gen',
+	bun: 'bun add @sigil-ts/gen',
+	npm: 'npm install @sigil-ts/gen',
+	pnpm: 'pnpm add @sigil-ts/gen',
+	yarn: 'yarn add @sigil-ts/gen',
 };
 
 const REACT_INSTALL_CMDS: Record<PkgManager, string> = {
-	bun: 'bun add sigil-react',
-	npm: 'npm install sigil-react',
-	pnpm: 'pnpm add sigil-react',
-	yarn: 'yarn add sigil-react',
+	bun: 'bun add @sigil-ts/react',
+	npm: 'npm install @sigil-ts/react',
+	pnpm: 'pnpm add @sigil-ts/react',
+	yarn: 'yarn add @sigil-ts/react',
 };
 
-const SVG_EXAMPLE = `import { avatar } from 'sigil-gen';
+const SVG_EXAMPLE = `import { avatar } from '@sigil-ts/gen';
 
 const svg = avatar('Alice Chen', {
   style: 'grain',
@@ -61,7 +76,7 @@ const svg = avatar('Alice Chen', {
 // Returns a complete SVG string
 document.body.innerHTML = svg;`;
 
-const REACT_EXAMPLE = `import { Avatar } from 'sigil-react';
+const REACT_EXAMPLE = `import { Avatar } from '@sigil-ts/react';
 
 function UserProfile({ name }: { name: string }) {
   return (
@@ -141,7 +156,7 @@ function UsageSection({ pkgManager }: { pkgManager: PkgManager }) {
 							className={`usage-tab ${tab === 'react' ? 'active' : ''}`}
 							onClick={() => setTab('react')}
 						>
-							sigil-react
+							@sigil-ts/react
 						</button>
 					</div>
 					<div className="usage-install">
@@ -174,7 +189,7 @@ function StylesSection() {
 	return (
 		<section className="section" id="styles">
 			<div className="section-label">Styles</div>
-			<h2 className="section-title">Five styles, one input</h2>
+			<h2 className="section-title">Eight styles, one input</h2>
 			<p className="section-desc">
 				Every style is a pure function from name to avatar. Same name, same result — always.
 			</p>
@@ -305,7 +320,7 @@ export function App() {
 					</a>
 					<span className="footer-sep">·</span>
 					<a
-						href="https://www.npmjs.com/package/sigil-gen"
+						href="https://www.npmjs.com/package/@sigil-ts/gen"
 						target="_blank"
 						rel="noopener noreferrer"
 					>

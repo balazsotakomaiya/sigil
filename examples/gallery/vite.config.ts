@@ -7,9 +7,9 @@ export default defineConfig({
 	plugins: [react()],
 	resolve: {
 		alias: {
-			'sigil-core': path.resolve(__dirname, '../../packages/core/src/index.ts'),
-			'sigil': path.resolve(__dirname, '../../packages/svg/src/index.ts'),
-			'sigil-react': path.resolve(__dirname, '../../packages/react/src/index.ts'),
+			'@sigil-ts/core': path.resolve(__dirname, '../../packages/core/src/index.ts'),
+			'@sigil-ts/gen': path.resolve(__dirname, '../../packages/svg/src/index.ts'),
+			'@sigil-ts/react': path.resolve(__dirname, '../../packages/react/src/index.ts'),
 		},
 	},
 	server: {
