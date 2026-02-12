@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 100 100">
+  <defs><clipPath id="gh323_c"><rect width="100" height="100" rx="16"/></clipPath></defs>
+  <g clip-path="url(#gh323_c)">
+    <rect width="100" height="100" fill="#1A1420"/>
+    <circle cx="34" cy="78" r="2" fill="#E4FFE8" opacity="0.2"/><circle cx="29" cy="18" r="1" fill="#E4FFE8" opacity="0.2"/><circle cx="48" cy="49" r="1" fill="#E4FFE8" opacity="0.2"/><circle cx="84" cy="36" r="1" fill="#E4FFE8" opacity="0.2"/>
+    <g transform="translate(0,3) rotate(3, 50, 50)">
+      <path d="M18,57 L18,73 Q28.666666666666664,77 39.33333333333333,73 Q49.99999999999999,69 60.66666666666666,73 Q71.33333333333333,77 82,73  L82,57 C82,9 18,9 18,57 Z" fill="#E4FFE8" opacity="0.85"/>
+      <circle cx="41" cy="46.2" r="4" fill="#1A1420"/><circle cx="42" cy="45.2" r="1.5" fill="#E4FFE8"/><circle cx="59" cy="46.2" r="4" fill="#1A1420"/><circle cx="60" cy="45.2" r="1.5" fill="#E4FFE8"/>
+      <path d="M46,53.2 Q48,57.2 50,53.2 Q52,57.2 54,53.2" fill="none" stroke="#1A1420" stroke-width="1.5" stroke-linecap="round"/>
+      
+    </g>
+  </g></svg>

@@ -30,6 +30,7 @@ export {
 } from './styles/index';
 export type {
 	StyleId,
+	BorderRadius,
 	AvatarRequest,
 	AvatarSpec,
 	StyleFunction,

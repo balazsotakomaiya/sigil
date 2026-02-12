@@ -1,9 +1,15 @@
-import type { TerminalSpec } from '@sigil-ts/core';
+import type { BorderRadius, TerminalSpec } from '@sigil-ts/core';
 
-export function renderTerminal(spec: TerminalSpec, size: number): string {
+export function renderTerminal(
+	spec: TerminalSpec,
+	size: number,
+	borderRadius?: BorderRadius,
+): string {
 	const { initials, palette, fontSize, promptStyle, topBar, statusLine, showCursor, hashValue } =
 		spec;
-	const uid = `tm${hashValue}`;
+	const brs = borderRadius === 'square' ? 's' : borderRadius === 'round' ? 'r' : 'q';
+	const uid = `tm${hashValue}${brs}`;
+	const rx = borderRadius === 'square' ? 0 : borderRadius === 'round' ? 50 : 8;
 
 	// Scanlines
 	let scanlines = '';
@@ -74,7 +80,7 @@ export function renderTerminal(spec: TerminalSpec, size: number): string {
 
 	return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 100 100">
   <defs>
-    <clipPath id="${uid}_c"><rect width="100" height="100" rx="8" ry="8"/></clipPath>
+    <clipPath id="${uid}_c"><rect width="100" height="100" rx="${rx}" ry="${rx}"/></clipPath>
     <radialGradient id="${uid}_glow" cx="50%" cy="50%">
       <stop offset="0%" stop-color="${palette.fg}" stop-opacity="${glowOpacity}"/>
       <stop offset="100%" stop-color="${palette.fg}" stop-opacity="0"/>

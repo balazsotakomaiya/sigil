@@ -1,12 +1,14 @@
-import type { BloomSpec } from '@sigil-ts/core';
+import type { BloomSpec, BorderRadius } from '@sigil-ts/core';
 
-export function renderBloom(spec: BloomSpec, size: number): string {
+export function renderBloom(spec: BloomSpec, size: number, borderRadius?: BorderRadius): string {
 	const { initials, palette, mainOrb, sparkOrb, grainSeed, fontSize } = spec;
-	const uid = `bl${grainSeed}`;
+	const brs = borderRadius === 'square' ? 's' : borderRadius === 'round' ? 'r' : 'q';
+	const uid = `bl${grainSeed}${brs}`;
+	const rx = borderRadius === 'square' ? 0 : borderRadius === 'round' ? 50 : 16;
 
 	return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 100 100">
   <defs>
-    <clipPath id="${uid}_c"><rect width="100" height="100" rx="16"/></clipPath>
+    <clipPath id="${uid}_c"><rect width="100" height="100" rx="${rx}"/></clipPath>
     <filter id="${uid}_b" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="20"/></filter>
     <filter id="${uid}_bs" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="10"/></filter>
     <filter id="${uid}_g" x="0" y="0" width="100%" height="100%">

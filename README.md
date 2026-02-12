@@ -1,6 +1,6 @@
 # Sigil
 
-![Sigil Banner](.github/assets/banner.png)
+![Sigil Banner](assets/banner.png)
 
 Deterministic, beautiful avatar generation from any name. Eight distinct visual styles — all derived purely from a hash of the input string. No random state, no external services, no images to host.
 
@@ -10,16 +10,16 @@ npm: @sigil-ts/core · @sigil-ts/gen · @sigil-ts/react
 
 ## Styles
 
-| Style         | Preview                                                                                                                                                                                      | Description                                          |
-| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
-| **Bloom**     | <img src=".github/assets/example-bloom-01.svg" width="48"> <img src=".github/assets/example-bloom-02.svg" width="48"> <img src=".github/assets/example-bloom-03.svg" width="48">             | Blurred orbs, heavy grain, moody atmospheric glow    |
-| **Grain**     | <img src=".github/assets/example-grain-01.svg" width="48"> <img src=".github/assets/example-grain-02.svg" width="48"> <img src=".github/assets/example-grain-03.svg" width="48">             | Film-grain texture via SVG noise, earthy palettes    |
-| **Brutalist** | <img src=".github/assets/example-brutalist-01.svg" width="48"> <img src=".github/assets/example-brutalist-02.svg" width="48"> <img src=".github/assets/example-brutalist-03.svg" width="48"> | Knockout stencil — initials punched through color    |
-| **Terminal**  | <img src=".github/assets/example-terminal-01.svg" width="48"> <img src=".github/assets/example-terminal-02.svg" width="48"> <img src=".github/assets/example-terminal-03.svg" width="48">    | CRT scanlines, phosphor glow, monospace prompts      |
-| **Pixel**     | <img src=".github/assets/example-pixel-01.svg" width="48"> <img src=".github/assets/example-pixel-02.svg" width="48"> <img src=".github/assets/example-pixel-03.svg" width="48">             | Custom 5×5 pixel font, retro gaming palettes         |
-| **Ghosts**    | <img src=".github/assets/example-ghosts-01.svg" width="48"> <img src=".github/assets/example-ghosts-02.svg" width="48"> <img src=".github/assets/example-ghosts-03.svg" width="48">          | Floating ghosts — wavy bottoms, expressive eyes      |
-| **Bots**      | <img src=".github/assets/example-bots-01.svg" width="48"> <img src=".github/assets/example-bots-02.svg" width="48"> <img src=".github/assets/example-bots-03.svg" width="48">                | Geometric robots — visors, antenna, body panels      |
-| **Faces**     | <img src=".github/assets/example-faces-01.svg" width="48"> <img src=".github/assets/example-faces-02.svg" width="48"> <img src=".github/assets/example-faces-03.svg" width="48">             | Generative abstract faces — eyes, brows, nose, mouth |
+| Style         | Preview                                                                                                                                                              | Description                                          |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| **Bloom**     | <img src="assets/example-bloom-01.svg" width="48"> <img src="assets/example-bloom-02.svg" width="48"> <img src="assets/example-bloom-03.svg" width="48">             | Blurred orbs, heavy grain, moody atmospheric glow    |
+| **Grain**     | <img src="assets/example-grain-01.svg" width="48"> <img src="assets/example-grain-02.svg" width="48"> <img src="assets/example-grain-03.svg" width="48">             | Film-grain texture via SVG noise, earthy palettes    |
+| **Brutalist** | <img src="assets/example-brutalist-01.svg" width="48"> <img src="assets/example-brutalist-02.svg" width="48"> <img src="assets/example-brutalist-03.svg" width="48"> | Knockout stencil — initials punched through color    |
+| **Terminal**  | <img src="assets/example-terminal-01.svg" width="48"> <img src="assets/example-terminal-02.svg" width="48"> <img src="assets/example-terminal-03.svg" width="48">    | CRT scanlines, phosphor glow, monospace prompts      |
+| **Pixel**     | <img src="assets/example-pixel-01.svg" width="48"> <img src="assets/example-pixel-02.svg" width="48"> <img src="assets/example-pixel-03.svg" width="48">             | Custom 5×5 pixel font, retro gaming palettes         |
+| **Ghosts**    | <img src="assets/example-ghosts-01.svg" width="48"> <img src="assets/example-ghosts-02.svg" width="48"> <img src="assets/example-ghosts-03.svg" width="48">          | Floating ghosts — wavy bottoms, expressive eyes      |
+| **Bots**      | <img src="assets/example-bots-01.svg" width="48"> <img src="assets/example-bots-02.svg" width="48"> <img src="assets/example-bots-03.svg" width="48">                | Geometric robots — visors, antenna, body panels      |
+| **Faces**     | <img src="assets/example-faces-01.svg" width="48"> <img src="assets/example-faces-02.svg" width="48"> <img src="assets/example-faces-03.svg" width="48">             | Generative abstract faces — eyes, brows, nose, mouth |
 
 ## Quick Start
 
@@ -72,22 +72,24 @@ const spec2 = grainStyle('Alice Chen');
 
 Main entry point from `@sigil-ts/gen`.
 
-| Param           | Type      | Default   | Description                                                                           |
-| --------------- | --------- | --------- | ------------------------------------------------------------------------------------- |
-| `name`          | `string`  | —         | Name to generate avatar for                                                           |
-| `options.style` | `StyleId` | `'grain'` | One of: `grain`, `faces`, `terminal`, `pixel`, `brutalist`, `bots`, `ghosts`, `bloom` |
-| `options.size`  | `number`  | `80`      | Output size in pixels                                                                 |
+| Param                  | Type           | Default      | Description                                                                           |
+| ---------------------- | -------------- | ------------ | ------------------------------------------------------------------------------------- |
+| `name`                 | `string`       | —            | Name to generate avatar for                                                           |
+| `options.style`        | `StyleId`      | `'grain'`    | One of: `grain`, `faces`, `terminal`, `pixel`, `brutalist`, `bots`, `ghosts`, `bloom` |
+| `options.size`         | `number`       | `80`         | Output size in pixels                                                                 |
+| `options.borderRadius` | `BorderRadius` | `'squircle'` | One of: `square`, `squircle`, `round`                                                 |
 
 Returns an SVG string.
 
 ### `<Avatar />` (React)
 
-| Prop        | Type      | Default   | Description                    |
-| ----------- | --------- | --------- | ------------------------------ |
-| `name`      | `string`  | —         | Name to generate avatar for    |
-| `style`     | `StyleId` | `'grain'` | Avatar style                   |
-| `size`      | `number`  | `80`      | Size in pixels                 |
-| `className` | `string`  | —         | CSS class for the wrapper span |
+| Prop           | Type           | Default      | Description                      |
+| -------------- | -------------- | ------------ | -------------------------------- |
+| `name`         | `string`       | —            | Name to generate avatar for      |
+| `style`        | `StyleId`      | `'grain'`    | Avatar style                     |
+| `size`         | `number`       | `80`         | Size in pixels                   |
+| `borderRadius` | `BorderRadius` | `'squircle'` | `square`, `squircle`, or `round` |
+| `className`    | `string`       | —            | CSS class for the wrapper span   |
 
 ## Development
 

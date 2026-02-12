@@ -1,4 +1,14 @@
-export type StyleId = 'grain' | 'faces' | 'terminal' | 'pixel' | 'brutalist' | 'bots' | 'ghosts' | 'bloom';
+export type StyleId =
+	| 'grain'
+	| 'faces'
+	| 'terminal'
+	| 'pixel'
+	| 'brutalist'
+	| 'bots'
+	| 'ghosts'
+	| 'bloom';
+
+export type BorderRadius = 'square' | 'squircle' | 'round';
 
 export interface AvatarRequest {
 	name: string;

@@ -1,5 +1,5 @@
-import { avatar } from '@sigil-ts/gen';
 import type { StyleId } from '@sigil-ts/core';
+import { avatar } from '@sigil-ts/gen';
 
 const STYLES: Array<{ id: StyleId; name: string; desc: string }> = [
 	{

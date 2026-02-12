@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { Avatar } from '@sigil-ts/react';
 import type { StyleId } from '@sigil-ts/core';
+import { Avatar } from '@sigil-ts/react';
+import { useState } from 'react';
 
 const STYLES: Array<{ id: StyleId; name: string; desc: string }> = [
 	{
@@ -100,8 +100,8 @@ export function App() {
 		<>
 			<h1 className="page-title">Sigil</h1>
 			<p className="page-sub">
-				Eight avatar styles generated deterministically from any name. Type a name below to
-				see your avatar in every style.
+				Eight avatar styles generated deterministically from any name. Type a name below to see your
+				avatar in every style.
 			</p>
 
 			<div className="input-area">
@@ -126,12 +126,7 @@ export function App() {
 			<hr className="divider" />
 
 			{STYLES.map((style, i) => (
-				<StyleSection
-					key={style.id}
-					style={style}
-					index={i}
-					isLast={i === STYLES.length - 1}
-				/>
+				<StyleSection key={style.id} style={style} index={i} isLast={i === STYLES.length - 1} />
 			))}
 		</>
 	);

@@ -1,6 +1,6 @@
 import { fnv1a, seeded } from '../hash';
 import { extractInitials } from '../initials';
-import { GHOST_BGS, GHOST_COLORS, GHOST_CHEEKS } from '../palettes';
+import { GHOST_BGS, GHOST_CHEEKS, GHOST_COLORS } from '../palettes';
 import type { GhostsSpec } from '../types';
 
 export function ghostsStyle(name: string): GhostsSpec {

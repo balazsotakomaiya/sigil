@@ -1,23 +1,23 @@
 {
-  "name": "@sigil/gallery",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@sigil-ts/core": "workspace:*",
-    "@sigil-ts/gen": "workspace:*",
-    "@sigil-ts/react": "workspace:*",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
-  },
-  "devDependencies": {
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
-    "@vitejs/plugin-react": "^4.3.4",
-    "vite": "^6.3.5"
-  }
+	"name": "@sigil/gallery",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@sigil-ts/core": "workspace:*",
+		"@sigil-ts/gen": "workspace:*",
+		"@sigil-ts/react": "workspace:*",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0"
+	},
+	"devDependencies": {
+		"@types/react": "^19.0.0",
+		"@types/react-dom": "^19.0.0",
+		"@vitejs/plugin-react": "^4.3.4",
+		"vite": "^6.3.5"
+	}
 }

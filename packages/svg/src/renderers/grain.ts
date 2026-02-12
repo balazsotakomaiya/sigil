@@ -1,8 +1,10 @@
-import type { GrainSpec } from '@sigil-ts/core';
+import type { BorderRadius, GrainSpec } from '@sigil-ts/core';
 
-export function renderGrain(spec: GrainSpec, size: number): string {
+export function renderGrain(spec: GrainSpec, size: number, borderRadius?: BorderRadius): string {
 	const { initials, palette, blobs, noiseFreq, noiseSeed, fontSize } = spec;
-	const uid = `gr${noiseSeed}`;
+	const rx = borderRadius === 'square' ? 0 : borderRadius === 'round' ? 50 : 14;
+	const brs = borderRadius === 'square' ? 's' : borderRadius === 'round' ? 'r' : 'q';
+	const uid = `gr${noiseSeed}${brs}`;
 
 	const blobSvg = blobs
 		.map(
@@ -21,7 +23,7 @@ export function renderGrain(spec: GrainSpec, size: number): string {
       </feComponentTransfer>
       <feBlend in="SourceGraphic" in2="faded" mode="overlay"/>
     </filter>
-    <clipPath id="${uid}_c"><rect width="100" height="100" rx="14" ry="14"/></clipPath>
+    <clipPath id="${uid}_c"><rect width="100" height="100" rx="${rx}" ry="${rx}"/></clipPath>
   </defs>
   <g clip-path="url(#${uid}_c)">
     <rect width="100" height="100" fill="${palette.bg}"/>

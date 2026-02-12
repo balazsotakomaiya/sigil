@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 100 100">
+  <defs>
+    <clipPath id="bl414_c"><rect width="100" height="100" rx="16"/></clipPath>
+    <filter id="bl414_b" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="20"/></filter>
+    <filter id="bl414_bs" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="10"/></filter>
+    <filter id="bl414_g" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="4" seed="414"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="overlay"/>
+    </filter>
+  </defs>
+  <g clip-path="url(#bl414_c)">
+    <rect width="100" height="100" fill="#0E0A0A"/>
+    <circle cx="33" cy="39" r="33" fill="#FB7185" filter="url(#bl414_b)" opacity="0.65"/>
+    <circle cx="83" cy="79" r="12" fill="#FBBF24" filter="url(#bl414_bs)" opacity="0.45"/>
+    <rect width="100" height="100" filter="url(#bl414_g)" fill="transparent"/>
+    <text x="50" y="52" dy="0.35em" text-anchor="middle" fill="white" font-family="'DM Sans', 'Helvetica Neue', sans-serif" font-size="30" font-weight="400" opacity="0.92" style="letter-spacing:0.5px">GT</text>
+  </g></svg>

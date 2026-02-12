@@ -1,10 +1,10 @@
 import { describe, expect, test } from 'bun:test';
-import { resolve } from '../src/styles/index';
-import { grainStyle } from '../src/styles/grain';
-import { facesStyle } from '../src/styles/faces';
 import { brutalistStyle } from '../src/styles/brutalist';
-import { terminalStyle } from '../src/styles/terminal';
+import { facesStyle } from '../src/styles/faces';
+import { grainStyle } from '../src/styles/grain';
+import { resolve } from '../src/styles/index';
 import { pixelStyle } from '../src/styles/pixel';
+import { terminalStyle } from '../src/styles/terminal';
 
 describe('style functions', () => {
 	const names = ['Alice Chen', 'Bob M', 'Fatima', 'George Tanaka', 'X'];

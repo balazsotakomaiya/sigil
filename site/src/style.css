@@ -20,8 +20,8 @@
 	--code-bg: #0f0f0f;
 	--radius: 8px;
 	--radius-lg: 12px;
-	--font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-	--font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+	--font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+	--font-mono: "JetBrains Mono", "SF Mono", "Fira Code", monospace;
 }
 
 html {
@@ -54,7 +54,7 @@ body {
 }
 
 .nav-logo {
-	font-family: 'Syne', var(--font-sans);
+	font-family: "Syne", var(--font-sans);
 	font-size: 26px;
 	font-weight: 700;
 	color: var(--text-primary);
@@ -451,6 +451,53 @@ body {
 	color: var(--text-tertiary);
 }
 
+/* ─── Border Radius ─── */
+
+.br-showcase {
+	display: flex;
+	gap: 40px;
+	justify-content: flex-start;
+}
+
+.br-group {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 14px;
+}
+
+.br-label {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	font-family: var(--font-mono);
+	font-size: 12px;
+	color: var(--text-tertiary);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	transition: color 0.15s;
+}
+
+.br-label:hover {
+	color: var(--text-secondary);
+}
+
+.br-avatars {
+	display: flex;
+	gap: 10px;
+}
+
+@media (max-width: 640px) {
+	.br-showcase {
+		flex-direction: column;
+		gap: 28px;
+	}
+}
+
 /* ─── Usage ─── */
 
 .usage-grid {
@@ -621,7 +668,7 @@ body {
 }
 
 .footer-logo {
-	font-family: 'Syne', var(--font-sans);
+	font-family: "Syne", var(--font-sans);
 	font-size: 15px;
 	font-weight: 700;
 	color: var(--text-tertiary);
@@ -650,7 +697,7 @@ body {
 }
 
 .footer .footer-credit-link {
-	font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+	font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
 	font-size: 18px;
 	font-style: italic;
 	color: var(--text-secondary);

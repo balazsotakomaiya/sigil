@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 100 100">
+  <defs>
+    <filter id="gr97_ng" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8400000000000001" numOctaves="4" seed="97" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="mono"/>
+      <feComponentTransfer in="mono" result="faded">
+        <feFuncA type="linear" slope="0.45"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="faded" mode="overlay"/>
+    </filter>
+    <clipPath id="gr97_c"><rect width="100" height="100" rx="14" ry="14"/></clipPath>
+  </defs>
+  <g clip-path="url(#gr97_c)">
+    <rect width="100" height="100" fill="#9B2335"/>
+    <circle cx="63" cy="38" r="40" fill="#E88D95" opacity="0.3"/>
+    <circle cx="57" cy="60" r="24" fill="#E88D95" opacity="0.18"/>
+    <rect width="100" height="100" filter="url(#gr97_ng)" fill="transparent"/>
+    <text x="50" y="52" dy="0.35em" text-anchor="middle" fill="white" font-family="'Instrument Serif', 'Georgia', serif" font-size="46" font-weight="400" opacity="0.95" style="letter-spacing:-1px">EG</text>
+  </g>
+</svg>

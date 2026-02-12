@@ -1,7 +1,11 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 
 body {
-	font-family: 'Inter', sans-serif;
+	font-family: "Inter", sans-serif;
 	background: #111110;
 	color: #d4d4c8;
 	min-height: 100vh;
@@ -9,7 +13,7 @@ body {
 }
 
 .page-title {
-	font-family: 'Syne', serif;
+	font-family: "Syne", serif;
 	font-size: 64px;
 	font-weight: 400;
 	color: #f5f5ec;
@@ -25,7 +29,9 @@ body {
 	line-height: 1.5;
 }
 
-.style-section { margin-bottom: 64px; }
+.style-section {
+	margin-bottom: 64px;
+}
 
 .style-header {
 	display: flex;
@@ -35,14 +41,14 @@ body {
 }
 
 .style-number {
-	font-family: 'Space Mono', monospace;
+	font-family: "Space Mono", monospace;
 	font-size: 12px;
 	color: #4a4a40;
 	min-width: 24px;
 }
 
 .style-name {
-	font-family: 'Syne', sans-serif;
+	font-family: "Syne", sans-serif;
 	font-weight: 800;
 	font-size: 20px;
 	color: #e8e8dc;
@@ -74,7 +80,7 @@ body {
 }
 
 .avatar-cell span {
-	font-family: 'Space Mono', monospace;
+	font-family: "Space Mono", monospace;
 	font-size: 10px;
 	color: #4a4a40;
 }
@@ -96,18 +102,22 @@ body {
 	border: 1px solid #2a2a26;
 	background: #1a1a18;
 	color: #e8e8dc;
-	font-family: 'Syne', sans-serif;
+	font-family: "Syne", sans-serif;
 	font-size: 15px;
 	width: 280px;
 	outline: none;
 	transition: border-color 0.2s;
 }
 
-.input-area input:focus { border-color: #5a5a50; }
-.input-area input::placeholder { color: #3a3a34; }
+.input-area input:focus {
+	border-color: #5a5a50;
+}
+.input-area input::placeholder {
+	color: #3a3a34;
+}
 
 .input-label {
-	font-family: 'Space Mono', monospace;
+	font-family: "Space Mono", monospace;
 	font-size: 10px;
 	color: #4a4a40;
 	margin-bottom: 8px;

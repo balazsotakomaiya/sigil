@@ -1,6 +1,6 @@
-import type { FacesSpec } from '@sigil-ts/core';
+import type { BorderRadius, FacesSpec } from '@sigil-ts/core';
 
-export function renderFaces(spec: FacesSpec, size: number): string {
+export function renderFaces(spec: FacesSpec, size: number, borderRadius?: BorderRadius): string {
 	const {
 		initials,
 		palette,
@@ -18,7 +18,9 @@ export function renderFaces(spec: FacesSpec, size: number): string {
 		headTilt,
 	} = spec;
 	const { bg, color: col, accent } = palette;
-	const uid = `fc${initials}${eyeSpacing}`;
+	const brs = borderRadius === 'square' ? 's' : borderRadius === 'round' ? 'r' : 'q';
+	const uid = `fc${initials}${eyeSpacing}${brs}`;
+	const rx = borderRadius === 'square' ? 0 : borderRadius === 'round' ? 50 : 16;
 
 	let eyes = '';
 	if (eyeShape === 0) {
@@ -71,7 +73,7 @@ export function renderFaces(spec: FacesSpec, size: number): string {
 
 	return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 100 100">
   <defs>
-    <clipPath id="${uid}_c"><rect width="100" height="100" rx="16" ry="16"/></clipPath>
+    <clipPath id="${uid}_c"><rect width="100" height="100" rx="${rx}" ry="${rx}"/></clipPath>
   </defs>
   <g clip-path="url(#${uid}_c)">
     <rect width="100" height="100" fill="${bg}"/>

@@ -1,38 +1,36 @@
 {
-  "name": "@sigil-ts/react",
-  "version": "0.3.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/balazsotakomaiya/sigil",
-    "directory": "packages/react"
-  },
-  "type": "module",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "bun": "./src/index.ts",
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    }
-  },
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "build": "bun build ./src/index.ts --outdir ./dist --target=browser --format=esm --external react && bun x tsc --emitDeclarationOnly",
-    "test": "bun test"
-  },
-  "dependencies": {
-    "@sigil-ts/gen": "workspace:*"
-  },
-  "peerDependencies": {
-    "react": ">=18"
-  },
-  "devDependencies": {
-    "@types/react": "^19.0.0",
-    "react": "^19.0.0",
-    "typescript": "^5.7.2"
-  }
+	"name": "@sigil-ts/react",
+	"version": "0.3.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/balazsotakomaiya/sigil",
+		"directory": "packages/react"
+	},
+	"type": "module",
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"bun": "./src/index.ts",
+			"import": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		}
+	},
+	"files": ["dist"],
+	"scripts": {
+		"build": "bun build ./src/index.ts --outdir ./dist --target=browser --format=esm --external react && bun x tsc --emitDeclarationOnly",
+		"test": "bun test"
+	},
+	"dependencies": {
+		"@sigil-ts/gen": "workspace:*"
+	},
+	"peerDependencies": {
+		"react": ">=18"
+	},
+	"devDependencies": {
+		"@types/react": "^19.0.0",
+		"react": "^19.0.0",
+		"typescript": "^5.7.2"
+	}
 }

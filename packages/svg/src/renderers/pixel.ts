@@ -1,8 +1,10 @@
-import type { PixelSpec } from '@sigil-ts/core';
+import type { BorderRadius, PixelSpec } from '@sigil-ts/core';
 
-export function renderPixel(spec: PixelSpec, size: number): string {
+export function renderPixel(spec: PixelSpec, size: number, borderRadius?: BorderRadius): string {
 	const { palette, bgPixels, letterBitmaps } = spec;
-	const uid = `px${letterBitmaps[0].startX}${bgPixels.length}`;
+	const brs = borderRadius === 'square' ? 's' : borderRadius === 'round' ? 'r' : 'q';
+	const uid = `px${letterBitmaps[0].startX}${bgPixels.length}${brs}`;
+	const clipRx = borderRadius === 'square' ? 0 : borderRadius === 'round' ? 50 : 6;
 
 	let bgPixelsSvg = '';
 	for (const p of bgPixels) {
@@ -25,7 +27,7 @@ export function renderPixel(spec: PixelSpec, size: number): string {
 
 	return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 100 100" shape-rendering="crispEdges">
   <defs>
-    <clipPath id="${uid}_c"><rect width="100" height="100" rx="6" ry="6"/></clipPath>
+    <clipPath id="${uid}_c"><rect width="100" height="100" rx="${clipRx}" ry="${clipRx}"/></clipPath>
   </defs>
   <g clip-path="url(#${uid}_c)">
     <rect width="100" height="100" fill="${palette.bg}"/>

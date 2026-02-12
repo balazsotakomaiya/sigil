@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import type { BorderRadius, StyleId } from '@sigil-ts/core';
 import { Avatar } from '@sigil-ts/react';
-import type { StyleId } from '@sigil-ts/core';
+import { useState } from 'react';
 import { CodeBlock } from './CodeBlock';
 
 const STYLES: Array<{ id: StyleId; label: string; desc: string }> = [
@@ -71,6 +71,7 @@ const SVG_EXAMPLE = `import { avatar } from '@sigil-ts/gen';
 const svg = avatar('Alice Chen', {
   style: 'grain',
   size: 64,
+  borderRadius: 'round',
 });
 
 // Returns a complete SVG string
@@ -84,6 +85,7 @@ function UserProfile({ name }: { name: string }) {
       name={name}
       style="grain"
       size={64}
+      borderRadius="round"
     />
   );
 }`;
@@ -117,7 +119,17 @@ function InstallBlock({
 					onClick={() => navigator.clipboard.writeText(INSTALL_CMDS[pkgManager])}
 					aria-label="Copy to clipboard"
 				>
-					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" role="img">
+					<svg
+						width="16"
+						height="16"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						strokeWidth="2"
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						role="img"
+					>
 						<title>Copy</title>
 						<rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
 						<path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
@@ -160,13 +172,9 @@ function UsageSection({ pkgManager }: { pkgManager: PkgManager }) {
 						</button>
 					</div>
 					<div className="usage-install">
-						<code>
-							{tab === 'svg'
-								? INSTALL_CMDS[pkgManager]
-								: REACT_INSTALL_CMDS[pkgManager]}
-						</code>
+						<code>{tab === 'svg' ? INSTALL_CMDS[pkgManager] : REACT_INSTALL_CMDS[pkgManager]}</code>
 					</div>
-							<CodeBlock code={tab === 'svg' ? SVG_EXAMPLE : REACT_EXAMPLE} />
+					<CodeBlock code={tab === 'svg' ? SVG_EXAMPLE : REACT_EXAMPLE} />
 				</div>
 
 				<div className="usage-preview">
@@ -180,6 +188,60 @@ function UsageSection({ pkgManager }: { pkgManager: PkgManager }) {
 						))}
 					</div>
 				</div>
+			</div>
+		</section>
+	);
+}
+
+const BORDER_RADII: Array<{ id: BorderRadius; label: string }> = [
+	{ id: 'square', label: 'Square' },
+	{ id: 'squircle', label: 'Squircle' },
+	{ id: 'round', label: 'Round' },
+];
+
+function BorderRadiusSection() {
+	return (
+		<section className="section" id="border-radius">
+			<div className="section-label">Border Radius</div>
+			<h2 className="section-title">Shape to fit</h2>
+			<p className="section-desc">
+				Every style supports three border radius options — square, squircle (default), and round.
+			</p>
+
+			<div className="br-showcase">
+				{BORDER_RADII.map((br) => (
+					<div key={br.id} className="br-group">
+						<button
+							type="button"
+							className="br-label"
+							onClick={() => navigator.clipboard.writeText(br.id)}
+							title={`Copy "${br.id}"`}
+						>
+							{br.label}
+							<svg
+								width="12"
+								height="12"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								strokeWidth="2"
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								role="img"
+							>
+								<title>Copy</title>
+								<rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+								<path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+							</svg>
+						</button>
+						<div className="br-avatars">
+							<Avatar name="Alice Chen" style="bloom" size={56} borderRadius={br.id} />
+							<Avatar name="Bob M" style="grain" size={56} borderRadius={br.id} />
+							<Avatar name="Clara J" style="faces" size={56} borderRadius={br.id} />
+							<Avatar name="David Kim" style="terminal" size={56} borderRadius={br.id} />
+						</div>
+					</div>
+				))}
 			</div>
 		</section>
 	);
@@ -202,7 +264,7 @@ function StylesSection() {
 							<span className="style-card-id">{style.id}</span>
 						</div>
 						<p className="style-card-desc">{style.desc}</p>
-							<div className="style-card-avatars">
+						<div className="style-card-avatars">
 							{(style.id === 'brutalist' ? BRUTALIST_NAMES : SAMPLE_NAMES).map((name) => (
 								<Avatar key={name} name={name} style={style.id} size={44} />
 							))}
@@ -215,8 +277,7 @@ function StylesSection() {
 						<span className="style-card-id">???</span>
 					</div>
 					<p className="style-card-desc">
-						New styles are in the works. Have an idea?
-						{' '}
+						New styles are in the works. Have an idea?{' '}
 						<a
 							href="https://github.com/balazsotakomaiya/sigil/issues"
 							target="_blank"
@@ -271,11 +332,13 @@ export function App() {
 			<header className="hero">
 				<div className="hero-badge">Deterministic avatar generation</div>
 				<h1 className="hero-title">
-					Beautiful avatars from<br />any string
+					Beautiful avatars from
+					<br />
+					any string
 				</h1>
 				<p className="hero-desc">
-					Zero dependencies. Drop‑in easy. Fully deterministic.
-					Same name, same avatar — every single time.
+					Zero dependencies. Drop‑in easy. Fully deterministic. Same name, same avatar — every
+					single time.
 				</p>
 
 				<InstallBlock pkgManager={pkgManager} setPkgManager={setPkgManager} />
@@ -303,6 +366,8 @@ export function App() {
 
 			<div className="ruler-divider" aria-hidden="true" />
 			<StylesSection />
+			<div className="ruler-divider" aria-hidden="true" />
+			<BorderRadiusSection />
 			<div className="ruler-divider" aria-hidden="true" />
 			<UsageSection pkgManager={pkgManager} />
 			<div className="ruler-divider" aria-hidden="true" />

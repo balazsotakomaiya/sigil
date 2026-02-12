@@ -1,7 +1,16 @@
 import { describe, expect, test } from 'bun:test';
+import {
+	bloomStyle,
+	botsStyle,
+	brutalistStyle,
+	facesStyle,
+	ghostsStyle,
+	grainStyle,
+	pixelStyle,
+	terminalStyle,
+} from '@sigil-ts/core';
 import { avatar } from '../src/index';
 import { renderSpec } from '../src/renderers/index';
-import { grainStyle, facesStyle, brutalistStyle, terminalStyle, pixelStyle, botsStyle, ghostsStyle, bloomStyle } from '@sigil-ts/core';
 
 describe('avatar()', () => {
 	test('returns valid SVG string', () => {
@@ -95,7 +104,16 @@ describe('renderSpec()', () => {
 
 	test('all styles produce valid SVG for various names', () => {
 		const names = ['Alice Chen', 'Bob M', 'Clara', 'Fatima', 'X'];
-		const styles = [grainStyle, facesStyle, brutalistStyle, terminalStyle, pixelStyle, botsStyle, ghostsStyle, bloomStyle] as const;
+		const styles = [
+			grainStyle,
+			facesStyle,
+			brutalistStyle,
+			terminalStyle,
+			pixelStyle,
+			botsStyle,
+			ghostsStyle,
+			bloomStyle,
+		] as const;
 
 		for (const name of names) {
 			for (const styleFn of styles) {

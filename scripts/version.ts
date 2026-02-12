@@ -1,8 +1,8 @@
 #!/usr/bin/env bun
 
+import { execSync } from 'node:child_process';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { execSync } from 'node:child_process';
 
 const PACKAGES = [
 	'packages/core/package.json',
@@ -18,8 +18,11 @@ function readPkg(rel: string) {
 }
 
 function writePkg(abs: string, data: Record<string, unknown>) {
-	writeFileSync(abs, `${JSON.stringify(data, null, 2)}
-`);
+	writeFileSync(
+		abs,
+		`${JSON.stringify(data, null, 2)}
+`,
+	);
 }
 
 function run(cmd: string) {
