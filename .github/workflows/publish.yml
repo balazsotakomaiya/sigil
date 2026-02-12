@@ -42,8 +42,12 @@ jobs:
       - name: Copy root README into gen and react with fixed image URLs
         run: |
           # Rewrite relative asset paths to absolute GitHub URLs for npm
-          sed 's|src="assets/|src="https://github.com/balazsotakomaiya/sigil/raw/HEAD/assets/|g' README.md > packages/svg/README.md
-          sed 's|src="assets/|src="https://github.com/balazsotakomaiya/sigil/raw/HEAD/assets/|g' README.md > packages/react/README.md
+          sed -e 's|src="assets/|src="https://github.com/balazsotakomaiya/sigil/raw/HEAD/assets/|g' \
+              -e 's|](assets/|](https://github.com/balazsotakomaiya/sigil/raw/HEAD/assets/|g' \
+              README.md > packages/svg/README.md
+          sed -e 's|src="assets/|src="https://github.com/balazsotakomaiya/sigil/raw/HEAD/assets/|g' \
+              -e 's|](assets/|](https://github.com/balazsotakomaiya/sigil/raw/HEAD/assets/|g' \
+              README.md > packages/react/README.md
 
       - name: Publish @sigil-ts/core
         run: |
