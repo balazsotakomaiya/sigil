@@ -75,6 +75,10 @@ for (const rel of PACKAGES) {
 	console.log(`  ✓ ${rel}`);
 }
 
+// Fix formatting with biome
+console.log('\n  Fixing formatting with biome...');
+run('bun run lint:fix');
+
 // Stage, commit, tag
 run(`git add ${PACKAGES.join(' ')}`);
 run(`git commit -m "v${nextVersion}"`);
