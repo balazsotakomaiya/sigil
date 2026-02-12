@@ -1,5 +1,17 @@
 #!/bin/sh
 
+echo "Running lint:fix before push..."
+bun run lint:fix
+
+if [ $? -ne 0 ]; then
+	echo ""
+	echo "Linting failed. Push aborted."
+	exit 1
+fi
+
+# Stage any files that were fixed by linter
+git add -A
+
 echo "Running tests before push..."
 bun test
 

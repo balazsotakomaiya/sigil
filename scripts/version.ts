@@ -20,7 +20,7 @@ function readPkg(rel: string) {
 function writePkg(abs: string, data: Record<string, unknown>) {
 	writeFileSync(
 		abs,
-		`${JSON.stringify(data, null, 2)}
+		`${JSON.stringify(data, null, '\t')}
 `,
 	);
 }
