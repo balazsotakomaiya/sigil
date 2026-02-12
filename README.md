@@ -2,7 +2,11 @@
 
 ![Sigil Banner](assets/banner.png)
 
-Deterministic, beautiful avatar generation from any name. Eight distinct visual styles — all derived purely from a hash of the input string. No random state, no external services, no images to host.
+[![npm version](https://img.shields.io/npm/v/@sigil-ts/gen)](https://www.npmjs.com/package/@sigil-ts/gen)
+[![CI](https://github.com/balazsotakomaiya/sigil/actions/workflows/ci.yml/badge.svg)](https://github.com/balazsotakomaiya/sigil/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+Deterministic, gorgeous avatar generation from any name. Eight distinct visual styles — all derived purely from a hash of the input string. No random state, no external services, no images to host.
 
 ```
 npm: @sigil-ts/core · @sigil-ts/gen · @sigil-ts/react
@@ -26,6 +30,8 @@ npm: @sigil-ts/core · @sigil-ts/gen · @sigil-ts/react
 ### SVG string (universal JS)
 
 ```bash
+npm install @sigil-ts/gen
+# or
 bun add @sigil-ts/gen
 ```
 
@@ -39,6 +45,8 @@ const svg = avatar('Balazs Otakomaiya', { style: 'grain', size: 80 });
 ### React component
 
 ```bash
+npm install @sigil-ts/react
+# or
 bun add @sigil-ts/react
 ```
 
@@ -47,24 +55,6 @@ import { Avatar } from '@sigil-ts/react';
 
 <Avatar name="Balazs Otakomaiya" style="terminal" size={48} />
 ```
-
-### Core only (build your own renderer)
-
-```bash
-bun add @sigil-ts/core
-```
-
-```typescript
-import { resolve, grainStyle } from '@sigil-ts/core';
-
-// Use the registry
-const spec = resolve('Alice Chen', 'grain');
-
-// Or import individual styles for tree-shaking
-const spec2 = grainStyle('Alice Chen');
-```
-
-**Core is the source of truth.** Each style is a pure function: `(name: string) → StyleSpec`. The spec is a platform-agnostic description of what to draw. Renderers (SVG, future Flutter) are thin translation layers.
 
 ## API
 

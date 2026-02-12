@@ -64,6 +64,7 @@ body {
 .nav-links {
 	display: flex;
 	gap: 24px;
+	align-items: center;
 }
 
 .nav-links a {
@@ -75,6 +76,24 @@ body {
 
 .nav-links a:hover {
 	color: var(--text-primary);
+}
+
+.github-star-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 6px 14px;
+	border: 1px solid var(--border);
+	border-radius: 6px;
+	font-size: 13px;
+	color: var(--text-secondary) !important;
+	transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.github-star-btn:hover {
+	color: var(--text-primary) !important;
+	border-color: var(--border-hover);
+	background: rgba(255, 255, 255, 0.04);
 }
 
 /* ─── Page ─── */
@@ -389,9 +408,21 @@ body {
 }
 
 .style-card-id {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
 	font-family: var(--font-mono);
 	font-size: 11px;
 	color: var(--text-tertiary);
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	transition: color 0.15s;
+}
+
+.style-card-id:hover {
+	color: var(--text-secondary);
 }
 
 .style-card-desc {

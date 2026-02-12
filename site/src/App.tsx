@@ -261,7 +261,29 @@ function StylesSection() {
 					<div key={style.id} className="style-card">
 						<div className="style-card-header">
 							<span className="style-card-name">{style.label}</span>
-							<span className="style-card-id">{style.id}</span>
+							<button
+								type="button"
+								className="style-card-id"
+								onClick={() => navigator.clipboard.writeText(style.id)}
+								title={`Copy "${style.id}"`}
+							>
+								{style.id}
+								<svg
+									width="10"
+									height="10"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									strokeWidth="2"
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									role="img"
+								>
+									<title>Copy</title>
+									<rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+									<path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+								</svg>
+							</button>
 						</div>
 						<p className="style-card-desc">{style.desc}</p>
 						<div className="style-card-avatars">
@@ -323,8 +345,23 @@ export function App() {
 						href="https://github.com/balazsotakomaiya/sigil"
 						target="_blank"
 						rel="noopener noreferrer"
+						className="github-star-btn"
 					>
-						GitHub
+						<svg
+							width="14"
+							height="14"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							strokeWidth="2"
+							strokeLinecap="round"
+							strokeLinejoin="round"
+							role="img"
+						>
+							<title>Star</title>
+							<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+						</svg>
+						Star on GitHub
 					</a>
 				</div>
 			</nav>
@@ -332,7 +369,7 @@ export function App() {
 			<header className="hero">
 				<div className="hero-badge">Deterministic avatar generation</div>
 				<h1 className="hero-title">
-					Beautiful avatars from
+					Gorgeous avatars from
 					<br />
 					any string
 				</h1>
