@@ -1,0 +1,14 @@
+name: sigil
+description: >-
+  Deterministic avatar generation for Dart. Generates unique, visually
+  distinctive SVG avatars from any name string. Supports 8 styles: grain,
+  faces, terminal, pixel, brutalist, bots, ghosts, and bloom.
+version: 0.1.0
+repository: https://github.com/sigil-ts/sigil
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dev_dependencies:
+  test: ^1.24.0
+  lints: ^3.0.0
